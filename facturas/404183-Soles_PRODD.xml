@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/ComercioExterior11 http://www.sat.gob.mx/sitio_internet/cfd/ComercioExterior11/ComercioExterior11.xsd" Version="3.3" Serie="XP" Folio="404183" Fecha="2023-01-10T16:20:09" Sello="LOa26HzE+/AWd2WHZAvSpLCs4pAsg5mNN154ZhlgRPYsKae3c2WoK27ybOFHXObP0b/rooLhCJvNHeizbFs+HukZNkIQxTGGQkxQnEyL7GSK1RELv0OcY6SjEc1Jwe72ukJWrXPtNtc9dj3wLj1m1tJlQDdsdORuX1TQRffpwfAd5hVnkiBUMLN6Mu2QhcnWRpoaY/69LLwwgWaD67FeAA4cdTT0L+u1awlOlLLgL4HtzeIXD9mqtXoPU4Et+tCE+jHQy7k4dqPL1HQtDUCRcuPR0gHj8OT00Sa2J0fE2W8zFE0B5/UD3Dm2oQiHeQXJrIy0bd9VXWRK0b4NW5GcZA==" FormaPago="99" NoCertificado="00001000000501033423" Certificado="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" CondicionesDePago="90" SubTotal="103930.26" Descuento="0.00" Moneda="USD" TipoCambio="19.164800" Total="103930.26" TipoDeComprobante="I" MetodoPago="PPD" LugarExpedicion="85000" xmlns:cce11="http://www.sat.gob.mx/ComercioExterior11">
+  <cfdi:Emisor Rfc="ASO0012122H1" Nombre="ALIMENTOS SOLES" RegimenFiscal="601" />
+  <cfdi:Receptor Rfc="XEXX010101000" Nombre="TEYO FOODS LLC" ResidenciaFiscal="USA" NumRegIdTrib="274220318" UsoCFDI="P01" />
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="50111500" NoIdentificacion="CE688" Cantidad="9458.300000" ClaveUnidad="KGM" Unidad="KILOS" Descripcion="COLLAR" ValorUnitario="4.29" Importe="40576.11" Descuento="0.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="40576.11" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="50111500" NoIdentificacion="CE689" Cantidad="8215.800000" ClaveUnidad="KGM" Unidad="KILOS" Descripcion="SR Belly" ValorUnitario="5.09" Importe="41818.42" Descuento="0.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="41818.42" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="50111500" NoIdentificacion="CE811" Cantidad="259.400000" ClaveUnidad="KGM" Unidad="KILOS" Descripcion="CC LOIN 0MM" ValorUnitario="3.79" Importe="983.13" Descuento="0.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="983.13" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="50111500" NoIdentificacion="CE849" Cantidad="375.000000" ClaveUnidad="KGM" Unidad="KILOS" Descripcion="JOWL MEAT 2.PC" ValorUnitario="5.59" Importe="2096.25" Descuento="0.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="2096.25" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="50111500" NoIdentificacion="CE891" Cantidad="228.100000" ClaveUnidad="KGM" Unidad="KILOS" Descripcion="OUTSIDE HAM 5mm" ValorUnitario="3.84" Importe="875.90" Descuento="0.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="875.90" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="50111500" NoIdentificacion="CE702" Cantidad="66.500000" ClaveUnidad="KGM" Unidad="KILOS" Descripcion="INSIDE HAM" ValorUnitario="3.84" Importe="255.36" Descuento="0.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="255.36" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="50111500" NoIdentificacion="CE704" Cantidad="50.000000" ClaveUnidad="KGM" Unidad="KILOS" Descripcion="KNUCKLE" ValorUnitario="3.84" Importe="192.00" Descuento="0.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="192.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="50111500" NoIdentificacion="CE10335" Cantidad="3732.700000" ClaveUnidad="KGM" Unidad="KILOS" Descripcion="SHEET BELLY 3.5 UP" ValorUnitario="4.59" Importe="17133.09" Descuento="0.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="17133.09" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="0.00">
+    <cfdi:Traslados>
+      <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <cce11:ComercioExterior Version="1.1" TipoOperacion="2" ClaveDePedimento="A1" CertificadoOrigen="0" Incoterm="FCA" Subdivision="0" TipoCambioUSD="19.1648" TotalUSD="103930.26">
+      <cce11:Emisor>
+        <cce11:Domicilio Calle="CHIHUAHUA" NumeroExterior="125 NTE" NumeroInterior="3B" Colonia="0858" Localidad="04" Municipio="018" Estado="SON" Pais="MEX" CodigoPostal="85000" />
+      </cce11:Emisor>
+      <cce11:Receptor>
+        <cce11:Domicilio Calle="1821 N MASTICK WAY SUITE # 1" Localidad="NOGALES" Municipio="ARIZONA" Estado="AZ" Pais="USA" CodigoPostal="85621-1032" />
+      </cce11:Receptor>
+      <cce11:Destinatario NumRegIdTrib="8010001100658" Nombre="IBC CORPORATION">
+        <cce11:Domicilio Calle="NISSHOHKAN 4FL" Colonia="1-10,KABUTO-CHO,NIHONBASHI,CHUO-KU" Localidad="TOKIO" Referencia="IBC CORPORATION" Municipio="TOKIO" Estado="TOK" Pais="JPN" CodigoPostal="103-0026" />
+      </cce11:Destinatario>
+      <cce11:Mercancias>
+        <cce11:Mercancia NoIdentificacion="CE688" FraccionArancelaria="0203199900" CantidadAduana="9458.300" UnidadAduana="01" ValorUnitarioAduana="4.29" ValorDolares="40576.11">
+          <cce11:DescripcionesEspecificas Marca="- Ningún fabricante -" />
+        </cce11:Mercancia>
+        <cce11:Mercancia NoIdentificacion="CE689" FraccionArancelaria="0203199900" CantidadAduana="8215.800" UnidadAduana="01" ValorUnitarioAduana="5.09" ValorDolares="41818.42">
+          <cce11:DescripcionesEspecificas Marca="- Ningún fabricante -" />
+        </cce11:Mercancia>
+        <cce11:Mercancia NoIdentificacion="CE811" FraccionArancelaria="0203199900" CantidadAduana="259.400" UnidadAduana="01" ValorUnitarioAduana="3.79" ValorDolares="983.13">
+          <cce11:DescripcionesEspecificas Marca="- Ningún fabricante -" />
+        </cce11:Mercancia>
+        <cce11:Mercancia NoIdentificacion="CE849" FraccionArancelaria="0203199900" CantidadAduana="375.000" UnidadAduana="01" ValorUnitarioAduana="5.59" ValorDolares="2096.25">
+          <cce11:DescripcionesEspecificas Marca="- Ningún fabricante -" />
+        </cce11:Mercancia>
+        <cce11:Mercancia NoIdentificacion="CE891" FraccionArancelaria="0203199900" CantidadAduana="228.100" UnidadAduana="01" ValorUnitarioAduana="3.84" ValorDolares="875.90">
+          <cce11:DescripcionesEspecificas Marca="- Ningún fabricante -" />
+        </cce11:Mercancia>
+        <cce11:Mercancia NoIdentificacion="CE702" FraccionArancelaria="0203199900" CantidadAduana="66.500" UnidadAduana="01" ValorUnitarioAduana="3.84" ValorDolares="255.36">
+          <cce11:DescripcionesEspecificas Marca="- Ningún fabricante -" />
+        </cce11:Mercancia>
+        <cce11:Mercancia NoIdentificacion="CE704" FraccionArancelaria="0203199900" CantidadAduana="50.000" UnidadAduana="01" ValorUnitarioAduana="3.84" ValorDolares="192.00">
+          <cce11:DescripcionesEspecificas Marca="- Ningún fabricante -" />
+        </cce11:Mercancia>
+        <cce11:Mercancia NoIdentificacion="CE10335" FraccionArancelaria="0203199900" CantidadAduana="3732.700" UnidadAduana="01" ValorUnitarioAduana="4.59" ValorDolares="17133.09">
+          <cce11:DescripcionesEspecificas Marca="- Ningún fabricante -" />
+        </cce11:Mercancia>
+      </cce11:Mercancias>
+    </cce11:ComercioExterior>
+    <tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" FechaTimbrado="2023-01-10T17:22:14" NoCertificadoSAT="00001000000505600468" RfcProvCertif="EME000602QR9" SelloCFD="LOa26HzE+/AWd2WHZAvSpLCs4pAsg5mNN154ZhlgRPYsKae3c2WoK27ybOFHXObP0b/rooLhCJvNHeizbFs+HukZNkIQxTGGQkxQnEyL7GSK1RELv0OcY6SjEc1Jwe72ukJWrXPtNtc9dj3wLj1m1tJlQDdsdORuX1TQRffpwfAd5hVnkiBUMLN6Mu2QhcnWRpoaY/69LLwwgWaD67FeAA4cdTT0L+u1awlOlLLgL4HtzeIXD9mqtXoPU4Et+tCE+jHQy7k4dqPL1HQtDUCRcuPR0gHj8OT00Sa2J0fE2W8zFE0B5/UD3Dm2oQiHeQXJrIy0bd9VXWRK0b4NW5GcZA==" SelloSAT="cE5o2fnL4YGIeMsggfZwESbr3HTt7ICjiZRVjZjYSWM7j3rgqmJoDPXT9zNwiUhrnxKN5cB2zBCA9cLzrrxHrX6VBpgeeSIwTOL2esKBtjv/Q+ainln80SOQuGlr0KNxUtg7DU+Zs1OvJD/jOxuasKFvk+4yFzznKDyUEQQTW/R5gAXqnXZ8YELojhU8bzamkGeimun6y0PsAptK5EEVmNTW1aMbE6Pj0WlWFeN9qxTVv5obmLl00Y/u5tKHiKzybPxvFN+qlMs2gC22vI0M+YX20zT9y/x7Wl7WDqNJEUw6tbqXXfsgmx7CFv+mjaWQj57wlgZ0XHTKPHlSk9G18w==" UUID="53019B0E-913D-11ED-A413-13CC9C8091FE" Version="1.1" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" />
+  </cfdi:Complemento>
+</cfdi:Comprobante>

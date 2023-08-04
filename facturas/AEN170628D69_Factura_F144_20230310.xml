@@ -1,0 +1,35 @@
+﻿<?xml version="1.0"?>
+<cfdi:Comprobante xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cce11="http://www.sat.gob.mx/ComercioExterior11" xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd http://www.sat.gob.mx/ComercioExterior11 http://www.sat.gob.mx/sitio_internet/cfd/ComercioExterior11/ComercioExterior11.xsd" xmlns:cfdi="http://www.sat.gob.mx/cfd/4" Version="4.0" Serie="F" Folio="144" Fecha="2023-03-10T16:06:07" Sello="YCyEcVRGY65AcLvtEyUR1n9lu609Y2mQq6dW/n+pXmvAVrY6GWjU0kTT3ZRrIIYgLkEj6pnBEKSkZF6VuvSjB+oITOsN08b+x6nJ9tTV28Px4b8FS1X20fItxdMxEHaQK39aDjKcCUDoun8eNK6t/aM7ySvovxonUd7ohxcDIp8VA1YdKrn3ow1f5IuxkYqKUzsMCBggS728DkAhWFEpAial2HMzqch9U+d8NTu12h+zPp6c4SzdZztouchnQEMvk9olVnD35IKcJVB/rcyX1SlQYPzFcU8lb53HyMNSI/pZPRE7b0NDf3tZj2GY9YxF83rzow6jnZVHK8v7sEjj4w==" FormaPago="99" NoCertificado="00001000000509860806" Certificado="MIIGKTCCBBGgAwIBAgIUMDAwMDEwMDAwMDA1MDk4NjA4MDYwDQYJKoZIhvcNAQELBQAwggGEMSAwHgYDVQQDDBdBVVRPUklEQUQgQ0VSVElGSUNBRE9SQTEuMCwGA1UECgwlU0VSVklDSU8gREUgQURNSU5JU1RSQUNJT04gVFJJQlVUQVJJQTEaMBgGA1UECwwRU0FULUlFUyBBdXRob3JpdHkxKjAoBgkqhkiG9w0BCQEWG2NvbnRhY3RvLnRlY25pY29Ac2F0LmdvYi5teDEmMCQGA1UECQwdQVYuIEhJREFMR08gNzcsIENPTC4gR1VFUlJFUk8xDjAMBgNVBBEMBTA2MzAwMQswCQYDVQQGEwJNWDEZMBcGA1UECAwQQ0lVREFEIERFIE1FWElDTzETMBEGA1UEBwwKQ1VBVUhURU1PQzEVMBMGA1UELRMMU0FUOTcwNzAxTk4zMVwwWgYJKoZIhvcNAQkCE01yZXNwb25zYWJsZTogQURNSU5JU1RSQUNJT04gQ0VOVFJBTCBERSBTRVJWSUNJT1MgVFJJQlVUQVJJT1MgQUwgQ09OVFJJQlVZRU5URTAeFw0yMTExMTExOTM3NTdaFw0yNTExMTExOTM3NTdaMIH3MS4wLAYDVQQDEyVBTEdPRE9ORVJBIEVOQ0lOSUxMQVMgU1BSIERFIFJMIERFIENWMS4wLAYDVQQpEyVBTEdPRE9ORVJBIEVOQ0lOSUxMQVMgU1BSIERFIFJMIERFIENWMS4wLAYDVQQKEyVBTEdPRE9ORVJBIEVOQ0lOSUxMQVMgU1BSIERFIFJMIERFIENWMSUwIwYDVQQtExxBRU4xNzA2MjhENjkgLyBEVEpBNjcwOTIzRlM2MR4wHAYDVQQFExUgLyBEWFRKNjcwOTIzSENIWUhDMDExHjAcBgNVBAsTFUFMR09ET05FUkEgRU5DSU5JTExBUzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAIBdpZ1UQO4u3C24VCvqhAJC9BBXZR2h0XLBEdarPX/M/aBYLl59uG/WoGP7ZJvszIq/Os4T5rKFXmDHZrGdAUJRNVG4prWTs3qXLPzc0zRiFGo1R13Fcxxv5qGhfgbZcypjez5KnAYkUbI6QYnFypdpJm17L9WrhkQN3tHkcqXp4JJ4TGtXvIg6PJnzzgIPmyzBcv/z5G+LQW0ixC5kwWOGNpmB3iGtwm1X74t//e61jS5mJ8qP5ttlUa9FOrmkr9zE4bazuAIt28AhqlL7oHmJCfvEiD9HS422EB3d5h6K30R/h1Hb4DPJKmPGAt53x8tLi5jTUdzKblvDGA9GRqkCAwEAAaMdMBswDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBsAwDQYJKoZIhvcNAQELBQADggIBAFuRSmbTn4nEzLLjIi/nkR2nR3N+SrzBD//bAx23SKHrL4SvQAKl1alsdI6Ujw9Di0nWKm3qtaOgU3f8xTDKwVhVsNmgnuTujeSAaGBhDg8duN6Ggio9TtK3p8HNKBuvJr9GnRQinY3eGKZ/kL3UZ9biMWwXKPsT4A9kSM5mt00FvGJVQSW9Tys4n/jidINk3NhsGrtzI28ibjbexgOc3O4IujZCR9P6c79Q/vg16LIaE8Ug+btLwy5kTPf9U3WrDcT9MTtUKDk/xJnKdSXuM3SPCrvxVvdo5+ELaGENqND9jlAoKFgNj2HNhyWwVjI0zaKeq+dJo04lSHzvDTlii4VcAHpYZi8LhGDmZRCfFWdfYi67e0OpSIpGpLbsT8qqSxk80JLZl7AJ9Qdq8ua7NTCZJypMNImR0FSTKe2ZDvm3mIAhok/LHVS9maaj+uRPVCsYKkUF8tmcq0LdC6EGK+Eg4MM2znvjKMtEgaCsY4V94FnnsRnphLtKQ/FrSkuuOc4Eu+NYyB2YYv7IDVYFbzvn9BE/oVAUdmPA2Y5gVI6rNuNSQTDgBXEfUu0Va0LXZUAB2BVeloqvyX3qozk5AsiMEwVWxPXLMvwUJJ4TlS9REHoM6SkizPjMQKl3bjLFJ2VGl4DBl4lxh3giZhgnZeb7e7leovTOURgqls/KTKkC" CondicionesDePago="CREDITO" SubTotal="27953.64" Moneda="USD" TipoCambio="17.9662" Total="27953.64" TipoDeComprobante="I" Exportacion="02" MetodoPago="PPD" LugarExpedicion="31630">
+	<cfdi:Emisor Rfc="AEN170628D69" Nombre="ALGODONERA ENCINILLAS" RegimenFiscal="601"/>
+	<cfdi:Receptor Rfc="XEXX010101000" Nombre="CARGILL COTTON, A BUSINESS UNIT OF CARGILL INCORPORATED" DomicilioFiscalReceptor="31630" ResidenciaFiscal="USA" NumRegIdTrib="410177680" RegimenFiscalReceptor="616" UsoCFDI="S01"/>
+	<cfdi:Conceptos>
+		<cfdi:Concepto ClaveProdServ="11121802" NoIdentificacion="ALGO" Cantidad="19548" ClaveUnidad="KGM" Unidad="Kilogramo" Descripcion="KILOGRAMOS DE ALGODON PLUMA" ValorUnitario="1.43" Importe="27953.64" ObjetoImp="02">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="27953.64" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+	</cfdi:Conceptos>
+	<cfdi:Impuestos TotalImpuestosTrasladados="0.00">
+		<cfdi:Traslados>
+			<cfdi:Traslado Base="27953.64" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00"/>
+		</cfdi:Traslados>
+	</cfdi:Impuestos>
+	<cfdi:Complemento>
+		<cce11:ComercioExterior Version="1.1" TipoOperacion="2" ClaveDePedimento="A1" CertificadoOrigen="1" NumCertificadoOrigen="1114585" Incoterm="FCA" Subdivision="0" TipoCambioUSD="17.9662" TotalUSD="27953.64">
+			<cce11:Emisor>
+				<cce11:Domicilio Calle="PREDIO LOS REYES LOTE 82" NumeroExterior="SN" Colonia="0241" Localidad="01" Municipio="019" Estado="CHH" Pais="MEX" CodigoPostal="31630"/>
+			</cce11:Emisor>
+			<cce11:Receptor NumRegIdTrib="410177680">
+				<cce11:Domicilio Calle="GOODLETT FARMS PARKWAY" NumeroExterior="7101" Localidad="CORDOVA" Municipio="MEMPHIS" Estado="TN" Pais="USA" CodigoPostal="38016"/>
+			</cce11:Receptor>
+			<cce11:Destinatario NumRegIdTrib="22266307" Nombre="NIEN HSING TEXTILE CO., LTD">
+				<cce11:Domicilio Calle="NEIHU RD SEC 1" NumeroExterior="306" NumeroInterior="13FL" Localidad="NEIHU" Municipio="TAI" Estado="TAI" Pais="TWN" CodigoPostal="114"/>
+			</cce11:Destinatario>
+			<cce11:Mercancias>
+				<cce11:Mercancia NoIdentificacion="ALGO" FraccionArancelaria="5201000399" CantidadAduana="19548" UnidadAduana="01" ValorUnitarioAduana="1.43" ValorDolares="27953.64"/>
+			</cce11:Mercancias>
+		</cce11:ComercioExterior>
+		<tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" SelloSAT="ZZ14t29CgTiTXXJQvfsiTvFYN84ewoY92KvroGzmAyXLQtHYfYTcfG/03m3nmzD3dtFgtHeRvM4YILSq47y9BUjNyXCRpgd1JQ3lCcmXboC3iRqLho+a+nMlmgQ15xTZECVis/Va4A1EG8Q4JqhByxnouNz4hkE7ciU0CBYulTgWs2RMM/oyj+hV01S5ylyDH+n5VFsRugjYS9P6HvlFMOpe+ebuhyZbxp1IoInzeFMd/aWboMA2+C+tsAklm3EE7wHJJ3DCh1wmUQJb33O7zv1EVwWpjwcZF4yxlXwmcUb7zWuwTpiLcaZ6J/TQbuk8QEEsp4EcifpYv1s4i+Bdyg==" NoCertificadoSAT="00001000000502000436" SelloCFD="YCyEcVRGY65AcLvtEyUR1n9lu609Y2mQq6dW/n+pXmvAVrY6GWjU0kTT3ZRrIIYgLkEj6pnBEKSkZF6VuvSjB+oITOsN08b+x6nJ9tTV28Px4b8FS1X20fItxdMxEHaQK39aDjKcCUDoun8eNK6t/aM7ySvovxonUd7ohxcDIp8VA1YdKrn3ow1f5IuxkYqKUzsMCBggS728DkAhWFEpAial2HMzqch9U+d8NTu12h+zPp6c4SzdZztouchnQEMvk9olVnD35IKcJVB/rcyX1SlQYPzFcU8lb53HyMNSI/pZPRE7b0NDf3tZj2GY9YxF83rzow6jnZVHK8v7sEjj4w==" RfcProvCertif="SCD110105654" FechaTimbrado="2023-03-10T16:07:16" UUID="D8737914-7973-B741-84AA-639005736970" Version="1.1"/></cfdi:Complemento>
+</cfdi:Comprobante>
