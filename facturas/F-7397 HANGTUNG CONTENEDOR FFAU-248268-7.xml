@@ -1,35 +1,67 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<cfdi:Comprobante xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cce11="http://www.sat.gob.mx/ComercioExterior11" xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd http://www.sat.gob.mx/ComercioExterior11 http://www.sat.gob.mx/sitio_internet/cfd/ComercioExterior11/ComercioExterior11.xsd" xmlns:cfdi="http://www.sat.gob.mx/cfd/4" Version="4.0" Serie="FAC" Folio="7397" Fecha="2023-02-16T15:48:41" Sello="tYrDPRKVJtucunl/4Q0ryrOt9FLCDLu2ibRSGSXivccDdDjXKRjgzraQMNL7N12VdbcGgW1VEqi0feuRq+Hc2nI5SLBKnjzpgiR/wP5Jps6cB31wv/qhamE5L7rLWQXW4E0h2gLCO1GiyZ6Oa9IvpnfYjgrKNcvrZWFHNWonSL9Dr1mm8pgDA648qUlYUh5Xc10GIxp5syco2W5nMwllY947jAc8GAvVjL0Enf8YKm7V6ovrNMu+yWidqUXRujm9dhK8vRnYpwqwPbLr+5QdjvqsdfLvJiipG3YLORlFQ2DjLrgcmmriYdH74iKXjhW+v4fb0IbCPaNQ7kI63vfA4Q==" FormaPago="30" NoCertificado="00001000000511029499" Certificado="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" CondicionesDePago="CONTADO" SubTotal="55383.27" Moneda="USD" TipoCambio="18.5383" Total="55383.27" TipoDeComprobante="I" Exportacion="02" MetodoPago="PUE" LugarExpedicion="32840">
+<cfdi:Comprobante xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:cce11="http://www.sat.gob.mx/ComercioExterior11"
+	xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd
+						http://www.sat.gob.mx/ComercioExterior11 http://www.sat.gob.mx/sitio_internet/cfd/ComercioExterior11/ComercioExterior11.xsd"
+	xmlns:cfdi="http://www.sat.gob.mx/cfd/4" Version="4.0" Serie="FAC" Folio="7397"
+	Fecha="2023-02-16T15:48:41"
+	Sello="tYrDPRKVJtucunl/4Q0ryrOt9FLCDLu2ibRSGSXivccDdDjXKRjgzraQMNL7N12VdbcGgW1VEqi0feuRq+Hc2nI5SLBKnjzpgiR/wP5Jps6cB31wv/qhamE5L7rLWQXW4E0h2gLCO1GiyZ6Oa9IvpnfYjgrKNcvrZWFHNWonSL9Dr1mm8pgDA648qUlYUh5Xc10GIxp5syco2W5nMwllY947jAc8GAvVjL0Enf8YKm7V6ovrNMu+yWidqUXRujm9dhK8vRnYpwqwPbLr+5QdjvqsdfLvJiipG3YLORlFQ2DjLrgcmmriYdH74iKXjhW+v4fb0IbCPaNQ7kI63vfA4Q=="
+	FormaPago="30" NoCertificado="00001000000511029499"
+	Certificado="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"
+	CondicionesDePago="CONTADO" SubTotal="55383.27" Moneda="USD" TipoCambio="18.5383"
+	Total="55383.27" TipoDeComprobante="I" Exportacion="02" MetodoPago="PUE" LugarExpedicion="32840">
 	<cfdi:CfdiRelacionados TipoRelacion="07">
-		<cfdi:CfdiRelacionado UUID="F33F25F9-0BF5-B641-BA4E-ADAEB817EEF1"/>
+		<cfdi:CfdiRelacionado UUID="F33F25F9-0BF5-B641-BA4E-ADAEB817EEF1" />
 	</cfdi:CfdiRelacionados>
-	<cfdi:Emisor Rfc="UAM140522Q51" Nombre="UNION ALGODONERA MOCTEZUMA" RegimenFiscal="601"/>
-	<cfdi:Receptor Rfc="XEXX010101000" Nombre="HANG TUNG RESOURCES LIMITED" DomicilioFiscalReceptor="32840" ResidenciaFiscal="HKG" NumRegIdTrib="0896056700004228" RegimenFiscalReceptor="616" UsoCFDI="S01"/>
+	<cfdi:Emisor Rfc="UAM140522Q51" Nombre="UNION ALGODONERA MOCTEZUMA" RegimenFiscal="601" />
+	<cfdi:Receptor Rfc="XEXX010101000" Nombre="HANG TUNG RESOURCES LIMITED"
+		DomicilioFiscalReceptor="32840" ResidenciaFiscal="HKG" NumRegIdTrib="0896056700004228"
+		RegimenFiscalReceptor="616" UsoCFDI="S01" />
 	<cfdi:Conceptos>
-		<cfdi:Concepto ClaveProdServ="11121802" NoIdentificacion="PACALG" Cantidad="21777" ClaveUnidad="KGM" Unidad="KGS" Descripcion="PACAS DE ALGODON PLUMA KG&#xA;CONTENEDOR FFAU-248268-7&#xA;SON 100 B/C" ValorUnitario="2.5432" Importe="55383.27" ObjetoImp="02">
+		<cfdi:Concepto ClaveProdServ="11121802" NoIdentificacion="PACALG" Cantidad="21777"
+			ClaveUnidad="KGM" Unidad="KGS"
+			Descripcion="PACAS DE ALGODON PLUMA KG&#xA;CONTENEDOR FFAU-248268-7&#xA;SON 100 B/C"
+			ValorUnitario="2.5432" Importe="55383.27" ObjetoImp="02">
 			<cfdi:Impuestos>
 				<cfdi:Traslados>
-					<cfdi:Traslado Base="55383.27" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00"/>
+					<cfdi:Traslado Base="55383.27" Impuesto="002" TipoFactor="Tasa"
+						TasaOCuota="0.000000" Importe="0.00" />
 				</cfdi:Traslados>
 			</cfdi:Impuestos>
 		</cfdi:Concepto>
 	</cfdi:Conceptos>
 	<cfdi:Impuestos TotalImpuestosTrasladados="0.00">
 		<cfdi:Traslados>
-			<cfdi:Traslado Base="55383.27" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00"/>
+			<cfdi:Traslado Base="55383.27" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000"
+				Importe="0.00" />
 		</cfdi:Traslados>
 	</cfdi:Impuestos>
 	<cfdi:Complemento>
-		<cce11:ComercioExterior Version="1.1" TipoOperacion="2" ClaveDePedimento="A1" CertificadoOrigen="0" Incoterm="FCA" Subdivision="0" Observaciones="CONTENEDOR FFAU-248268-7&#xA;SON 100 B/C" TipoCambioUSD="18.5383" TotalUSD="55383.27">
+		<cce11:ComercioExterior Version="1.1" TipoOperacion="2" ClaveDePedimento="A1"
+			CertificadoOrigen="0" Incoterm="FCA" Subdivision="0"
+			Observaciones="CONTENEDOR FFAU-248268-7&#xA;SON 100 B/C" TipoCambioUSD="18.5383"
+			TotalUSD="55383.27">
 			<cce11:Emisor>
-				<cce11:Domicilio Calle="Carretera Panamericana" NumeroExterior="Km 167.5" Colonia="1339" Municipio="001" Estado="CHH" Pais="MEX" CodigoPostal="32840"/>
+				<cce11:Domicilio Calle="Carretera Panamericana" NumeroExterior="Km 167.5"
+					Colonia="1339" Municipio="001" Estado="CHH" Pais="MEX" CodigoPostal="32840" />
 			</cce11:Emisor>
 			<cce11:Receptor NumRegIdTrib="0896056700004228">
-				<cce11:Domicilio Calle="A KUNG NGAM VILLAGE ROAD" NumeroExterior="18" NumeroInterior="17&amp;18/F" Municipio="SHAU KEI WAN" Estado="SKW" Pais="HKG" CodigoPostal="999077"/>
+				<cce11:Domicilio Calle="A KUNG NGAM VILLAGE ROAD" NumeroExterior="18"
+					NumeroInterior="17&amp;18/F" Municipio="SHAU KEI WAN" Estado="SKW" Pais="HKG"
+					CodigoPostal="999077" />
 			</cce11:Receptor>
 			<cce11:Mercancias>
-				<cce11:Mercancia NoIdentificacion="PACALG" FraccionArancelaria="5201000399" CantidadAduana="21777" UnidadAduana="01" ValorUnitarioAduana="2.54" ValorDolares="55383.27"/>
+				<cce11:Mercancia NoIdentificacion="PACALG" FraccionArancelaria="5201000399"
+					CantidadAduana="21777" UnidadAduana="01" ValorUnitarioAduana="2.54"
+					ValorDolares="55383.27" />
 			</cce11:Mercancias>
 		</cce11:ComercioExterior>
-		<tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" SelloSAT="YMBDVs1dRamFJnep8MHwphVtWQakrUtTHg3RpS8UYTqr0PLVuo40nNa4pMnCWoHqm8Bd/U9Qv0tJYL2R5uf6q7zMR0b9l6R+Gv3f8py1ZfzmPJ6+1U7EoDW19GHt9gFnr+l9YLMYEDlGEy+fFysXC0uWbUO2KKBWY1355laJT8npt7qTrrRFhJSix7R3rDJIFq+hsT/ynaI5RGw5EXPwMiUDw9fIPKJ5OZ731T0c6hfEbRP7lrLkHCTi7axjFHVSfnrYfHkLQfBOBxNTVKKoZYTbb9F93cTDEbsjXYQxHpxARDkKkKOQv/k8gXZi6SkqMTbZR/+XLF6jVkCP4GBA1Q==" NoCertificadoSAT="00001000000502000436" SelloCFD="tYrDPRKVJtucunl/4Q0ryrOt9FLCDLu2ibRSGSXivccDdDjXKRjgzraQMNL7N12VdbcGgW1VEqi0feuRq+Hc2nI5SLBKnjzpgiR/wP5Jps6cB31wv/qhamE5L7rLWQXW4E0h2gLCO1GiyZ6Oa9IvpnfYjgrKNcvrZWFHNWonSL9Dr1mm8pgDA648qUlYUh5Xc10GIxp5syco2W5nMwllY947jAc8GAvVjL0Enf8YKm7V6ovrNMu+yWidqUXRujm9dhK8vRnYpwqwPbLr+5QdjvqsdfLvJiipG3YLORlFQ2DjLrgcmmriYdH74iKXjhW+v4fb0IbCPaNQ7kI63vfA4Q==" RfcProvCertif="SCD110105654" FechaTimbrado="2023-02-16T15:52:17" UUID="96A32A50-F582-2244-B716-01E8463449D9" Version="1.1"/></cfdi:Complemento>
+		<tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital"
+			xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd"
+			SelloSAT="YMBDVs1dRamFJnep8MHwphVtWQakrUtTHg3RpS8UYTqr0PLVuo40nNa4pMnCWoHqm8Bd/U9Qv0tJYL2R5uf6q7zMR0b9l6R+Gv3f8py1ZfzmPJ6+1U7EoDW19GHt9gFnr+l9YLMYEDlGEy+fFysXC0uWbUO2KKBWY1355laJT8npt7qTrrRFhJSix7R3rDJIFq+hsT/ynaI5RGw5EXPwMiUDw9fIPKJ5OZ731T0c6hfEbRP7lrLkHCTi7axjFHVSfnrYfHkLQfBOBxNTVKKoZYTbb9F93cTDEbsjXYQxHpxARDkKkKOQv/k8gXZi6SkqMTbZR/+XLF6jVkCP4GBA1Q=="
+			NoCertificadoSAT="00001000000502000436"
+			SelloCFD="tYrDPRKVJtucunl/4Q0ryrOt9FLCDLu2ibRSGSXivccDdDjXKRjgzraQMNL7N12VdbcGgW1VEqi0feuRq+Hc2nI5SLBKnjzpgiR/wP5Jps6cB31wv/qhamE5L7rLWQXW4E0h2gLCO1GiyZ6Oa9IvpnfYjgrKNcvrZWFHNWonSL9Dr1mm8pgDA648qUlYUh5Xc10GIxp5syco2W5nMwllY947jAc8GAvVjL0Enf8YKm7V6ovrNMu+yWidqUXRujm9dhK8vRnYpwqwPbLr+5QdjvqsdfLvJiipG3YLORlFQ2DjLrgcmmriYdH74iKXjhW+v4fb0IbCPaNQ7kI63vfA4Q=="
+			RfcProvCertif="SCD110105654" FechaTimbrado="2023-02-16T15:52:17"
+			UUID="96A32A50-F582-2244-B716-01E8463449D9" Version="1.1" />
+	</cfdi:Complemento>
 </cfdi:Comprobante>

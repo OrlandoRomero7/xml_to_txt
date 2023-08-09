@@ -1,0 +1,35 @@
+Mis dudas con lo xml
+
+4- Los numeros de parte no parecen suer muy variables, pero dejo lo de numero de identificacion
+*5- Valor Mercancia = CantidadAduana o valorDolares?
+
+7- El ejemplo tiene 06, pero en el xml no hay nada similar, podria ser Unidad Aduana
+8- No esta en xml
+*9- Valor agregado sera Impuestos o TotalImpuestosTrasladados ? / no - despues (retornos)
+10- Creo que no viene en el xml
+11- Creo que no viene en el xml
+12- Vacio
+13- Vacio
+*14- Puse emisor
+*15- Puse receptor
+16- Vacio
+*17- Parece que se repite con 06-Cantidad Comercial
+18- No esta en el xml
+19- Vacio
+*20- Tiene un 0 en el txt, y los unicos ceros que aparecen los tienen CertificadoOrigen y Subdivision
+21- Vacio
+22- No esta en el xml
+23- Vacio
+24- Vacio
+25- Moneda
+26- Tasa Arancel , en el txt .0 no se que sea
+27 al 35 vacios
+36- No esta en el xml
+37- Vacio
+38- ya esta
+39- Tiene 1, no esta en el xml
+40- No esta en el xml
+41- No esta en el xml
+42- Vacio
+*43- El numero de factura no se la verdad de donde lo sacan. Al parecer es el folio + uuid
+44- 45 Vacios, y ya no hay mas palitos.

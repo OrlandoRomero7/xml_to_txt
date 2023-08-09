@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cce11="http://www.sat.gob.mx/ComercioExterior11"
+    xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd
+                        http://www.sat.gob.mx/ComercioExterior11 http://www.sat.gob.mx/sitio_internet/cfd/ComercioExterior11/ComercioExterior11.xsd"
+    Certificado="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"
+    Exportacion="02" Fecha="2023-07-05T11:17:09" Folio="753" FormaPago="99" LugarExpedicion="22444"
+    MetodoPago="PPD" Moneda="USD" NoCertificado="00001000000508644232"
+    Sello="Mb6oyQQg8ORRik9+betBOSL1XBl/jl9FNUNgJIvv/21nFrxj85stIrC92tJN1tZOP5TKdHgslhftJBXASRIPEZrcb3QXBLE16ihEVP+eqzmesjufskJzpaKyPr5uIOtJzEUPZjpyXWjrBVV9kNT3H+CBo++46zd9wYd/PJFyghyV5SRRMAoEUVP7u5dH+ifAOhzYpVxvgwrYSMuHZqenKiJHO7lGvkbW/uQwCqSuH5erIHPP9K+nARAjqgu64x7lp1hFodQ+cXWIJioXirTScN1Fauq8ddB6Jg/EZMLzxFc9wlPOM4vxXvG+7BWINA624SnnepSuK5eqRkGkLzl8AQ=="
+    Serie="IE" SubTotal="26582.40" TipoCambio="17.0517" TipoDeComprobante="I" Total="26582.40"
+    Version="4.0">
+    <cfdi:Emisor Nombre="CGLB" RegimenFiscal="601" Rfc="CGL060116LV0"></cfdi:Emisor>
+    <cfdi:Receptor DomicilioFiscalReceptor="22444" Nombre="Bucher Industries LLC"
+        NumRegIdTrib="912197253" RegimenFiscalReceptor="616" ResidenciaFiscal="USA"
+        Rfc="XEXX010101000" UsoCFDI="S01"></cfdi:Receptor>
+    <cfdi:Conceptos>
+        <cfdi:Concepto Cantidad="14400.0000" ClaveProdServ="42292400" ClaveUnidad="H87"
+            Descripcion="MANGO DE PLASTICO Y ACERO PARA BISTURI (PARTE)" Importe="26582.40"
+            NoIdentificacion="51001809" ObjetoImp="02" Unidad="PIEZA" ValorUnitario="1.8460">
+            <cfdi:Impuestos>
+                <cfdi:Traslados>
+                    <cfdi:Traslado Base="26582.40" Importe="0.00" Impuesto="002"
+                        TasaOCuota="0.000000" TipoFactor="Tasa"></cfdi:Traslado>
+                </cfdi:Traslados>
+            </cfdi:Impuestos>
+        </cfdi:Concepto>
+    </cfdi:Conceptos>
+    <cfdi:Impuestos TotalImpuestosTrasladados="0.00">
+        <cfdi:Traslados>
+            <cfdi:Traslado Base="26582.40" Importe="0.00" Impuesto="002" TasaOCuota="0.000000"
+                TipoFactor="Tasa"></cfdi:Traslado>
+        </cfdi:Traslados>
+    </cfdi:Impuestos>
+    <cfdi:Complemento>
+        <cce11:ComercioExterior Version="1.1" TipoOperacion="2" ClaveDePedimento="A1"
+            CertificadoOrigen="0" Incoterm="DAP" Subdivision="0" TipoCambioUSD="17.051700"
+            TotalUSD="26582.40">
+            <cce11:Emisor>
+                <cce11:Domicilio Calle="Nueve Sur" NumeroExterior="974" NumeroInterior="A"
+                    Colonia="0865" Localidad="04" Municipio="004" Estado="BCN" Pais="MEX"
+                    CodigoPostal="22444" />
+            </cce11:Emisor>
+            <cce11:Receptor NumRegIdTrib="912197253">
+                <cce11:Domicilio Calle="Airway Road" NumeroExterior="A5" Localidad="San Diego"
+                    Municipio="San Diego" Estado="CA" Pais="USA" CodigoPostal="92154" />
+            </cce11:Receptor>
+            <cce11:Mercancias>
+                <cce11:Mercancia NoIdentificacion="51001809" FraccionArancelaria="9018900700"
+                    CantidadAduana="26582.400" UnidadAduana="01" ValorUnitarioAduana="1.00"
+                    ValorDolares="26582.40">
+                    <cce11:DescripcionesEspecificas Marca="SANDEL" />
+                </cce11:Mercancia>
+            </cce11:Mercancias>
+        </cce11:ComercioExterior>
+        <tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital"
+            xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd"
+            Version="1.1" UUID="ADC2785D-4CE5-4628-B6A6-4F48261DA9AC"
+            FechaTimbrado="2023-07-05T12:17:23" RfcProvCertif="MAS0810247C0"
+            SelloCFD="Mb6oyQQg8ORRik9+betBOSL1XBl/jl9FNUNgJIvv/21nFrxj85stIrC92tJN1tZOP5TKdHgslhftJBXASRIPEZrcb3QXBLE16ihEVP+eqzmesjufskJzpaKyPr5uIOtJzEUPZjpyXWjrBVV9kNT3H+CBo++46zd9wYd/PJFyghyV5SRRMAoEUVP7u5dH+ifAOhzYpVxvgwrYSMuHZqenKiJHO7lGvkbW/uQwCqSuH5erIHPP9K+nARAjqgu64x7lp1hFodQ+cXWIJioXirTScN1Fauq8ddB6Jg/EZMLzxFc9wlPOM4vxXvG+7BWINA624SnnepSuK5eqRkGkLzl8AQ=="
+            NoCertificadoSAT="00001000000505142236"
+            SelloSAT="ONUNp2xy9oE3Fs48cy6gN3pLauiATpfL6WLFDGRvStymLC9jrrL9g7V52/XxRuIUA4USQ/5vvP6hVegkUEFk4cpzmUqW/onT5ZLmCmOajx9YSnSFr1r8Zhjz7XZjlKAwMwYC/xLyej7DZJ2fAoj0SU7VOVg2I+mWySri75bUiBTD+qEdRAxA1AWMeieY51QwNz4BKnMqDhIvJ4jKSSz+Y/O4X00sJOBMg6uQNEbMeFP0j1loUdD9KDMHL5G1cKVNg+/wp/9s6DSEzahgMv5q+cSYislO7jqtPr+HtQCv0szGqBY1DXiGl6wj0yqysV0lVn7DrNqqfF1/tnLfFI3dOQ==" />
+    </cfdi:Complemento>
+</cfdi:Comprobante>

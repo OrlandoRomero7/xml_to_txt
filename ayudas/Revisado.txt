@@ -1,0 +1,65 @@
+DEF-2303011
+551|39269099|PROTECTOR DE PLASTICO PARA CAJAS TRANSPORTADORES DE METERIAL|AJUPER6435|463.15|3000.000|06|213.000|0.00|1|6|||KOR|USA||3000.000|C62_1||0||213|||USD|0.||||||||||0.15438333||463.15|1|0.07100000|0.07766667||DEF-2303011|||
+
+CNP-1375
+551|84191101|CALENTADOR DE GAS INSTANTANEO PARA AGUA|JXI400P|1048.38|1.000|06|1.000|0.10|0|0|||USA|USA||1.000|C62_1||0||63.957|||USD|0||||||||||1048.38000000||1048.38|6|63.95760000|63.95760000||CNP-1375||||00|
+
+
+CNP-1375
+1-Tipo de registro 		                                 551|
+2-Fraccion			                                     84191101|
+3-Descripcion			                                 CALENTADOR DE GAS INSTANTANEO PARA AGUA|
+4-No.Parte			                                     JXI400P|
+5-Valor Mercancia		                                 1048.38|
+6-Cantidad Comercial		                             1.000|
+7-Unida Medida Comercial                                 06|
+8-Cantidad Tarifa                                        1.000|
+9-ValorAgregado                                          0.10|
+10-Vinculacion                                           0|
+11-Metodo de valoracion                                  0|
+12-Marca                                                 |
+13-Modelo                                                |
+14-País de Origen/Destino                                USA|
+15-País Comprador/Vendedor                               USA|
+16-Correlación TIGIE                                     |
+17-Cantidad UMF                                          1.000|          
+18-Unidad Medida Facturación (UMF)                       C62_1|  
+19-Descripción COVE                                      |  
+20-Identificador de Arancel a Aplicar                    0|  
+21-Clave de Industria PPS o Acuerdo de Aladi             |              
+22-Peso                                                  63.957|                    
+23-Uso de la Mercancía                                   |         
+24-Estado de la Mercancía                                |    
+25-Moneda                                                USD| 
+26-Tasa Arancel IGI                                      0|
+27-Correlación Aladi                                     |  
+28-Valor Mcías. No Originarias                           |
+29-Monto IGI                                             |
+30-Fp 303                                                |
+31-Kilogramos de Azúcar                                  |
+32-Reservado        ??? Lo dejo pasar?                   |
+33-País Moneda                                           |
+34-FP IVA                                                |
+35-FP IGI\IGE                                            |
+36-Precio Unitario                                       1048.38000000|
+37-Valor en Aduana                                       |
+38-Valor en Dólares                                      1048.38|
+39-UMT                                                   6|
+40-Peso Neto Unitario en Kilos                           63.95760000|
+41-Peso Bruto Unitario en Kilos                          63.95760000|
+42-Orden de Compra                                       |
+43-Número de Factura                                     CNP-1375|
+44-Guía Master                                           |
+45-Guía House                                            |
+46-Rendimiento en litros (IEPS)                          |                           
+47-Código NICO                                           00|           
+48-Bultos (Avisos Electrónicos de           
+Imp y Exp)                  
+49-Código del Producto (para CFDI 
+de Carta Porte)                   
+
+
+DEF-2303011
+
+DEF-2303011
+551|39269099|PROTECTOR DE PLASTICO PARA CAJAS TRANSPORTADORES DE METERIAL|AJUPER6435|463.15|3000.000|06|213.000|0.00|1|6|||KOR|USA||3000.000|C62_1||0||213|||USD|0.||||||||||0.15438333||463.15|1|0.07100000|0.07766667||DEF-2303011|||
