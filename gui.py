@@ -4,12 +4,15 @@ from cfdiConverter import create
 import os
 from PIL import Image
 
-ctk.set_appearance_mode("System")  # Modes: system (default), light, dark
-ctk.set_default_color_theme("blue")  # Themes: blue (default), dark-blue, green
+ctk.set_appearance_mode("light")  # Modes: system (default), light, dark
+# Themes: blue (default), dark-blue, green
+ctk.set_default_color_theme("green")
 
 app = ctk.CTk()  # create CTk window like you do with the Tk window
-app.geometry("400x240")
+app.geometry("436x346")
+app.maxsize(436, 346)
 app.title("Convertidor XML a TXT")
+
 
 """ img = Image.open("icon.png")
 img = img.resize((50, 50))
@@ -24,7 +27,7 @@ resized_add_first_icon = raw_add_first_icon.resize(
 converted_add_first_icon = ctk.CTkImage(resized_add_first_icon, size=(85, 70))
 
 add_first_icon = ctk.CTkLabel(
-    app, image=converted_add_first_icon, text=None, fg_color="#4D5057")
+    app, image=converted_add_first_icon, text=None, fg_color="#ebebeb")
 add_first_icon.place(x=160, y=20)
 
 
@@ -35,17 +38,21 @@ def abrir_explorador():
     }
     archivo = filedialog.askopenfilename(**opciones)
     nombre, extension = os.path.splitext(os.path.basename(archivo))
-    #print(nombre)
-    
-    if archivo != "" and no_factura !="" and no_pedimento!="":
+    # print(nombre)
+
+    if archivo != "" and no_factura != "" and no_pedimento != "":
         #print("Archivo XML seleccionado:", archivo)
-        create(archivo,nombre,no_pedimento.get(),no_factura.get())
+        create(archivo, nombre, no_pedimento.get(), no_factura.get())
+
 
 # Use CTkButton instead of tkinter Button
-button = ctk.CTkButton(master=app, text="Cargar CFDI", command=abrir_explorador)
+button = ctk.CTkButton(master=app, text="Cargar CFDI",
+                       command=abrir_explorador)
 button.place(relx=0.5, rely=0.8, anchor=ctk.CENTER)
 
 ################# Restriccion de solo numero y longitud de no. pedimiento ########
+
+
 def validate_pedimento(value_if_allowed):
     if value_if_allowed == "":
         return True
@@ -55,24 +62,25 @@ def validate_pedimento(value_if_allowed):
         return False
 #################################################################################
 
-######## INPUTS ####### 
+
+######## INPUTS #######
 no_pedimento_CTkLabel = ctk.CTkLabel(
-    app,text="No. Pedimento:", text_color="#595959")
+    app, text="No. Pedimento:", text_color="#595959")
 no_pedimento_CTkLabel.place(x=30, y=90)
 
 no_pedimento = ctk.CTkEntry(
-    app, fg_color="black", corner_radius=7,  width=125)
+    app, fg_color="white", corner_radius=7,  width=125)
 no_pedimento.place(x=20, y=120)
 no_pedimento.configure(validate="key",
-                           validatecommand=(app.register(validate_pedimento), '%P'))
+                       validatecommand=(app.register(validate_pedimento), '%P'))
 
 
 no_factura_CTkLabel = ctk.CTkLabel(
-    app,text="No. Factura:", text_color="#595959")
+    app, text="No. Factura:", text_color="#595959")
 no_factura_CTkLabel.place(x=260, y=90)
 
 no_factura = ctk.CTkEntry(
-    app, fg_color="black", corner_radius=7,  width=125)
+    app, fg_color="white", corner_radius=7,  width=125)
 no_factura.place(x=260, y=120)
 #################################################################################
 
