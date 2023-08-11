@@ -1,12 +1,13 @@
 from tqdm import tqdm
 
-def create_text_block501(operacion, clave,  no_pedimento,no_factura,moneda):
+def create_text_block501(operacion, clave, no_pedimento,codigo_impo,no_factura, moneda):
     fields = [''] * 24
 
     fields[0] = "501"       #1 Tipo de Registro
     fields[1] = operacion   #2 Tipo de Operacion
     fields[2] = clave       #3 Clave de Pedimento
     fields[3] = no_pedimento       #4 Numero de Pedimento
+    fields[4] = codigo_impo
     fields[16] = no_factura  #17 Referencia
     fields[19] = moneda      #20 Pais Moneda ?
 
@@ -16,7 +17,7 @@ def create_text_block551(noParte, fraccion, descripcion, cantidadComercial, valo
     fields = [''] * 46
     result = []  # Aquí almacenaremos los resultados de todas las iteraciones
 
-    for parte, fra, desc, canti, val_dol in tqdm(zip(noParte, fraccion, descripcion, cantidadComercial, valor_dolares), desc="Processing 551", total=len(noParte)):
+    for parte, fra, desc, canti, val_dol in zip(noParte, fraccion, descripcion, cantidadComercial, valor_dolares):
         fields[0] = "551"  # 1 Tipo de Registro
         fields[1] = fra
         fields[2] = desc
@@ -33,20 +34,22 @@ def create_text_block551(noParte, fraccion, descripcion, cantidadComercial, valo
 
     return ''.join(result)  # Unir todos los resultados en una sola cadena y retornarla
 
-def create_text_block505(folio, fecha, incoterm, moneda, total_usd, uuid):
+def create_text_block505(folio, fecha, incoterm, moneda, total_usd, codigo_proveedor,uuid):
     formatted_fecha = fecha.replace('-', '')
     fields = [''] * 44
-    fields[0] = folio
-    fields[1] = formatted_fecha
-    fields[2] = incoterm
-    fields[3] = moneda
-    fields[4] = total_usd
+    fields[0] = "505"
+    fields[1] = folio
+    fields[2] = formatted_fecha
+    fields[3] = incoterm
+    fields[4] = moneda
     fields[5] = total_usd
+    fields[6] = total_usd
     #fields[6] = destinatario_nombre
-    fields[17] = ' '  # Observaciones a nivel factura
-    fields[18:25] = ['0'] * 7
-    fields[30] = fecha
-    fields[39] = uuid
+    fields[7] = codigo_proveedor
+    fields[16] = ' '  # Observaciones a nivel factura
+    fields[17:24] = ['0'] * 7
+    fields[29] = fecha
+    fields[38] = uuid
 
-    return f"505|{'|'.join(fields)}||"
+    return f"{'|'.join(fields)}||"
 
