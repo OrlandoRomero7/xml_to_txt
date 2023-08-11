@@ -30,8 +30,9 @@ if not check_lock():
 
     app = ctk.CTk()  # create CTk window like you do with the Tk window
     app.geometry("405x346")
+    app.iconbitmap('icon.ico')
     app.resizable(False,False)
-    app.title("Convertidor XML a TXT")
+    app.title("Convertidor CFDI a TXT DARWIN")
     app.protocol("WM_DELETE_WINDOW", on_closing)
 
 

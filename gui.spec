@@ -8,7 +8,7 @@ a = Analysis(
     ['gui.py'],
     pathex=[],
     binaries=[],
-    datas=[('C:/Users/Orlando/AppData/Local/Programs/Python/Python311/Lib/site-packages/babel', 'babel'), ('C:/Users/Orlando/AppData/Local/Programs/Python/Python311/Lib/site-packages/customtkinter', 'customtkinter')],
+    datas=[('C:/Users/Orlando/AppData/Local/Programs/Python/Python311/Lib/site-packages/babel', 'babel'), ('C:/Users/Orlando/AppData/Local/Programs/Python/Python311/Lib/site-packages/customtkinter', 'customtkinter'), ('C:/Users/Orlando/AppData/Local/Programs/Python/Python311/Lib/site-packages/CTkMessagebox', 'CTkMessagebox')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
