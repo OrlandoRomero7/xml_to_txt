@@ -7,10 +7,13 @@ import os
 import shutil
 import subprocess
 from CTkMessagebox import CTkMessagebox
+from translate import Translator
 
 # Definir el espacio de nombres para el prefijo usado en el XML
 namespace = {'ns': 'http://www.sat.gob.mx/ComercioExterior11'}
 namespace2 = {'ns': 'http://www.sat.gob.mx/cfd/4'}
+
+translator = Translator(to_lang="es")
 
 def parse_xml501(xml_file):
     tree = ET.parse(xml_file)
@@ -45,7 +48,7 @@ def parse_xml505(xml_file):
     return folio, fecha, incoterm, moneda, total_usd,  uuid
     
 
-def parse_xml551(xml_file):
+def parse_xml551(xml_file,checkbox_tra):
     tree = ET.parse(xml_file)
     root = tree.getroot()
     list_fracciones = []
@@ -82,9 +85,13 @@ def parse_xml551(xml_file):
 
     for concepto in conceptos:
         _descripcion = concepto.get('Descripcion')
-        descripcion = _descripcion.replace('&#xA;', ' ').replace('\n', ' ').strip()
+        descripcion_formateada = _descripcion.replace('&#xA;', ' ').replace('\n', ' ').strip()
+        if checkbox_tra == "on":
+            descripcion_final= translator.translate(descripcion_formateada)
+        else:
+            descripcion_final = descripcion_formateada
         cantidad = concepto.get('Cantidad')
-        list_descripciones.append(descripcion) 
+        list_descripciones.append(descripcion_final) 
         list_cantidadComercial.append(cantidad)
                 
     return  list_noParte,list_fracciones, list_descripciones, list_cantidadComercial, list_valorDolares, pais_origen,pais_destino,moneda
@@ -96,7 +103,7 @@ def parse_xml551(xml_file):
 #xml_file = 'C:/Users/medin/Downloads/F-0000005283.xml'
 
 
-def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,set_focus_on_entry):
+def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,set_focus_on_entry,UMF,checkbox_tra):
     try:
         xml_file = ruta
         # 501 ###########################################################################
@@ -110,8 +117,8 @@ def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,s
             folio, fecha, incoterm, moneda, total_usd, codigo_proveedor, uuid)
         # 551 #######################################################################
         noParte,fraccion, descripcion, cantidadComercial, valor_dolares,pais_origen,pais_destino,moneda= parse_xml551(
-            xml_file)
-        text_block551 = create_text_block551(noParte,fraccion, descripcion,cantidadComercial,valor_dolares,pais_origen,pais_destino,moneda,no_factura) 
+            xml_file,checkbox_tra)
+        text_block551 = create_text_block551(noParte,fraccion, descripcion,cantidadComercial,UMF,valor_dolares,pais_origen,pais_destino,moneda,no_factura) 
         success_first_try = True 
     except Exception as e:
         set_focus_on_entry()
@@ -124,6 +131,8 @@ def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,s
         # Ruta en la unidad de red
         try:
             network_folder = r'H:\Vantec\DARWIN\Facturas\In'
+            #C:\Users\Orlando\Downloads
+            
             export_file_name = name_file + ".txt"
             export_txt_folder = os.path.join(network_folder, export_file_name)
 

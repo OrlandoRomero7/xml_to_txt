@@ -13,7 +13,7 @@ def create_text_block501(operacion, clave, no_pedimento,codigo_impo,no_factura, 
 
     return f"{'|'.join(fields)}||"
 
-def create_text_block551(noParte, fraccion, descripcion, cantidadComercial, valor_dolares, pais_origen, pais_destino, moneda, no_factura):
+def create_text_block551(noParte, fraccion, descripcion, cantidadComercial, UMF,valor_dolares, pais_origen, pais_destino, moneda, no_factura):
     fields = [''] * 46
     result = []  # Aquí almacenaremos los resultados de todas las iteraciones
 
@@ -22,8 +22,10 @@ def create_text_block551(noParte, fraccion, descripcion, cantidadComercial, valo
         fields[1] = fra
         fields[2] = desc
         fields[3] = parte
+        fields[4] = val_dol
         fields[5] = canti
-        #fields[6] = um
+        fields[6] = UMF
+        #fields[7] = cant_tarifa
         fields[13] = pais_origen
         fields[14] = pais_destino
         fields[23] = moneda
@@ -36,20 +38,20 @@ def create_text_block551(noParte, fraccion, descripcion, cantidadComercial, valo
 
 def create_text_block505(folio, fecha, incoterm, moneda, total_usd, codigo_proveedor,uuid):
     formatted_fecha = fecha.replace('-', '')
-    fields = [''] * 44
+    fields = [''] * 52
     fields[0] = "505"
-    fields[1] = folio
+    fields[1] = folio # ??????
     fields[2] = formatted_fecha
-    fields[3] = incoterm
+    fields[3] = incoterm #?????
     fields[4] = moneda
     fields[5] = total_usd
     fields[6] = total_usd
     #fields[6] = destinatario_nombre
     fields[7] = codigo_proveedor
-    fields[16] = ' '  # Observaciones a nivel factura
-    fields[17:24] = ['0'] * 7
-    fields[29] = fecha
-    fields[38] = uuid
+    #fields[16] = ' '  # Observaciones a nivel factura
+    #fields[17:24] = ['0'] * 7
+    fields[31] = fecha # ?????
+    fields[40] = uuid 
 
     return f"{'|'.join(fields)}||"
 
