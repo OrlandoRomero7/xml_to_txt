@@ -3,10 +3,15 @@ from tkinter import filedialog
 from cfdiConverter import create
 import os
 from PIL import Image
+from tkinterdnd2 import DND_FILES, TkinterDnD
+from CTkMessagebox import CTkMessagebox
+from selectClient import mostrar_ventana_secundaria
 
 
 # Ruta del archivo de bloqueo
 lock_file_path = "my_app.lock"
+abrir="yes"
+filepath = ""
 
 def check_lock():
     if os.path.exists(lock_file_path):
@@ -50,17 +55,24 @@ if not check_lock():
     def set_focus_on_entry():
         no_pedimento.focus()
 
-    def abrir_explorador():
-        if no_factura.get() != "" and no_pedimento.get() != "" and codigo_impo.get() != "" and codigo_proveedor.get()!="" and entry_UMF.get()!="":
-            opciones = {
+    def abrir_explorador(filepath,abrir):
+        if (no_factura.get() != "" or checkbox_mar.get()=="on") and (no_pedimento.get() != "" and codigo_impo.get() != "" and codigo_proveedor.get()!="" and entry_UMF.get()!=""):
+            
+            if abrir=="yes":
+                opciones = {
                 "title": "Selecciona un archivo XML",
                 "filetypes": (("Archivos XML", "*.xml"),)
-            }
-            archivo = filedialog.askopenfilename(**opciones)
-            nombre, extension = os.path.splitext(os.path.basename(archivo))
+                }
+                archivo = filedialog.askopenfilename(**opciones)
+                nombre, extension = os.path.splitext(os.path.basename(archivo))
+            elif abrir=="no":
+                archivo = filepath
+                nombre, extension = os.path.splitext(os.path.basename(archivo))
 
             if archivo != "" :
-                create(archivo, nombre, no_pedimento.get(), no_factura.get().upper(),codigo_impo.get().upper(),codigo_proveedor.get().upper(),set_focus_on_entry,entry_UMF.get().upper(),checkbox_tra.get())
+                #if(checkbox_mar.get()=="on")
+
+                create(archivo, nombre, no_pedimento.get(), no_factura.get().upper(),codigo_impo.get().upper(),codigo_proveedor.get().upper(),set_focus_on_entry,entry_UMF.get().upper(),checkbox_tra.get(),checkbox_mar.get())
                 clear_entry()
 
     def clear_entry():
@@ -70,6 +82,8 @@ if not check_lock():
         codigo_proveedor.delete(0, 'end') 
         entry_UMF.delete(0, 'end') 
         checkbox_tra.deselect()
+        checkbox_mar.deselect()
+        #check_var.set("false")
         
 
     ################# Restricciones de digitos,letras y longitud de entrys ########
@@ -105,6 +119,14 @@ if not check_lock():
             return True
         else:
             return False
+        
+    def checkbox_event_mar():
+        if check_var.get() == "on":
+            no_factura.configure(state='disabled')
+        else:
+            no_factura.configure(state='normal')
+
+
     
     """ def validate_cant_tarifa(value_if_allowed):
         if value_if_allowed == "":
@@ -128,6 +150,15 @@ if not check_lock():
     no_pedimento.place(x=20, y=120)
     no_pedimento.configure(validate="key",
                         validatecommand=(app.register(validate_pedimento), '%P'))
+    
+    #Maritimo
+    mar_CTkLabel = ctk.CTkLabel(
+        app, text="Maritimo", text_color="#595959")
+    mar_CTkLabel.place(x=190, y=90)
+    check_var = ctk.StringVar(value="off")
+    checkbox_mar = ctk.CTkCheckBox(master=app, fg_color="black", corner_radius=7,text="", variable=check_var,
+                                    onvalue="on", offvalue="off",command=checkbox_event_mar)
+    checkbox_mar.place(x=220, y=120)
 
     #Numero de factura
     no_factura_CTkLabel = ctk.CTkLabel(
@@ -150,6 +181,8 @@ if not check_lock():
     codigo_impo.place(x=20, y=190)
     codigo_impo.configure(validate="key",
                         validatecommand=(app.register(validate_codigo_impANDprovee), '%P'))
+    button_cli = ctk.CTkButton(app, text="+",width=25,height=25,command=lambda: mostrar_ventana_secundaria(app,codigo_impo))
+    button_cli.place(x=150, y=190)
 
     #Codigo del proveedor
     codigo_proveedor_CTkLabel = ctk.CTkLabel(
@@ -188,16 +221,48 @@ if not check_lock():
                         validatecommand=(app.register(validate_UMF), '%P'))
     
     #Checkbox Traducir Descipcion
-    checkbox_tra = ctk.CTkCheckBox(master=app, fg_color="black", corner_radius=7,text="Traducir\nDescripcion", 
+    tra_CTkLabel = ctk.CTkLabel(
+        app, text="Traducir\nDescripción", text_color="#595959")
+    tra_CTkLabel.place(x=320, y=230)
+    checkbox_tra = ctk.CTkCheckBox(master=app, fg_color="black", corner_radius=7,text="", 
                                     onvalue="on", offvalue="off")
-    checkbox_tra.place(x=260, y=260)
+    checkbox_tra.place(x=340, y=260)
     
     #################################################################################
 
+    def handle_drop(event):
+        global abrir,filepath
+        abrir="no"
+        filepath = event.data.replace("{", "").replace("}", "")
+
+        # Check if the dropped file has the desired extension (e.g., '.txt')
+        desired_extension = '.xml'  # Change this to the desired extension
+        if filepath.lower().endswith(desired_extension):
+            abrir_explorador(filepath,abrir)
+        else:
+            CTkMessagebox(title="Formato no admitido", message="Archivo incorrecto. Debe ser de tipo {}".format(desired_extension), icon="cancel")
+            
+        abrir="yes"
+        
     # Use CTkButton instead of tkinter Button
     button = ctk.CTkButton(master=app, text="Cargar CFDI",
-                        command=abrir_explorador)
+                        command=lambda: abrir_explorador(filepath,abrir))
     button.place(relx=0.5, rely=0.8, anchor=ctk.CENTER)
     #button.bind("<Tab>", abrir_explorador)
+
+    raw_add_first_icon = Image.open(r'pasar.jpg')
+    add_first_width, add_first_height = 202, 42
+    resized_add_first_icon = raw_add_first_icon.resize(
+        (add_first_width, add_first_height))
+    converted_add_first_icon = ctk.CTkImage(resized_add_first_icon, size=(202, 40))
+
+    add_first_icon = ctk.CTkLabel(
+        app, image=converted_add_first_icon, text=None, fg_color="#4D5057")
+    add_first_icon.place(relx=0.5, rely=0.91, anchor=ctk.CENTER)
+    #add_first_icon.place(x=100, y=360)
+
+    add_first_icon.drop_target_register(DND_FILES)
+    add_first_icon.dnd_bind('<<Drop>>', handle_drop)
+
 
     app.mainloop()

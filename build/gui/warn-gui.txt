@@ -15,12 +15,12 @@ IMPORTANT: Do NOT post this list to the issue-tracker. Use it as a basis for
             tracking down the missing module yourself. Thanks!
 
 missing module named 'org.python' - imported by copy (optional), xml.sax (delayed, conditional)
-missing module named posix - imported by shutil (conditional), importlib._bootstrap_external (conditional), os (conditional, optional), posixpath (optional)
+missing module named posix - imported by os (conditional, optional), posixpath (optional), shutil (conditional), importlib._bootstrap_external (conditional)
 missing module named resource - imported by posix (top-level)
 missing module named _frozen_importlib_external - imported by importlib._bootstrap (delayed), importlib (optional), importlib.abc (optional), zipimport (top-level)
 excluded module named _frozen_importlib - imported by importlib (optional), importlib.abc (optional), zipimport (top-level)
 missing module named org - imported by pickle (optional)
-missing module named pwd - imported by shutil (delayed, optional), tarfile (optional), pathlib (delayed, optional), subprocess (delayed, conditional, optional), posixpath (delayed, conditional, optional), netrc (delayed, conditional), getpass (delayed), http.server (delayed, optional), webbrowser (delayed), distutils.util (delayed, conditional, optional), distutils.archive_util (optional), setuptools._distutils.archive_util (optional), setuptools._distutils.util (delayed, conditional, optional)
+missing module named pwd - imported by posixpath (delayed, conditional, optional), shutil (delayed, optional), tarfile (optional), pathlib (delayed, optional), subprocess (delayed, conditional, optional), netrc (delayed, conditional), getpass (delayed), http.server (delayed, optional), webbrowser (delayed), distutils.util (delayed, conditional, optional), distutils.archive_util (optional), setuptools._distutils.archive_util (optional), setuptools._distutils.util (delayed, conditional, optional)
 missing module named grp - imported by shutil (delayed, optional), tarfile (optional), pathlib (delayed, optional), subprocess (delayed, conditional, optional), distutils.archive_util (optional), setuptools._distutils.archive_util (optional)
 missing module named _posixsubprocess - imported by subprocess (conditional), multiprocessing.util (delayed)
 missing module named fcntl - imported by subprocess (optional), xmlrpc.server (optional), tqdm.utils (delayed, optional)
@@ -78,6 +78,8 @@ missing module named 'setuptools.extern.packaging.requirements' - imported by se
 missing module named importlib_metadata - imported by setuptools._importlib (delayed, optional)
 missing module named pyimod02_importers - imported by C:\Users\Orlando\AppData\Local\Programs\Python\Python311\Lib\site-packages\PyInstaller\hooks\rthooks\pyi_rth_pkgres.py (delayed), C:\Users\Orlando\AppData\Local\Programs\Python\Python311\Lib\site-packages\PyInstaller\hooks\rthooks\pyi_rth_pkgutil.py (delayed)
 missing module named _scproxy - imported by urllib.request (conditional)
+missing module named Tix - imported by tkinterdnd2.TkinterDnD (optional)
+missing module named Tkinter - imported by tkinterdnd2.TkinterDnD (optional)
 missing module named olefile - imported by PIL.FpxImagePlugin (top-level), PIL.MicImagePlugin (top-level)
 missing module named numpy.arctanh - imported by numpy (top-level), numexpr.tests.test_numexpr (top-level)
 missing module named numpy.arccosh - imported by numpy (top-level), numexpr.tests.test_numexpr (top-level)

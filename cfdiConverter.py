@@ -27,8 +27,10 @@ def parse_xml501(xml_file):
     """ referencia = root.find(
         './/ns:Destinatario/ns:Domicilio',namespace).get('Referencia') #17  """
     moneda = root.get('Moneda') #20
+    uuid = root.find(
+        './/{http://www.sat.gob.mx/TimbreFiscalDigital}TimbreFiscalDigital').get('UUID')
 
-    return operacion, clave, moneda
+    return operacion, clave, moneda, uuid
 
 def parse_xml505(xml_file):
     
@@ -57,12 +59,14 @@ def parse_xml551(xml_file,checkbox_tra):
     list_valorDolares = []
     list_noParte = []
     list_cantidadComercial = []
-
+    uuid = root.find(
+        './/{http://www.sat.gob.mx/TimbreFiscalDigital}TimbreFiscalDigital').get('UUID')
     mercancias = root.findall('.//ns:Mercancias/ns:Mercancia', namespace)
     conceptos = root.findall('.//ns:Conceptos/ns:Concepto', namespace2)
     pais_origen = root.find('.//ns:Receptor/ns:Domicilio',namespace).get('Pais')
     #pais_destino = root.find('.//ns:Destinatario/ns:Domicilio',namespace).get('Pais')
     pais_destino_elemento = root.find('.//ns:Destinatario/ns:Domicilio', namespace)
+
     if pais_destino_elemento is not None:
         pais_destino = pais_destino_elemento.get('Pais')
     else: 
@@ -94,7 +98,7 @@ def parse_xml551(xml_file,checkbox_tra):
         list_descripciones.append(descripcion_final) 
         list_cantidadComercial.append(cantidad)
                 
-    return  list_noParte,list_fracciones, list_descripciones, list_cantidadComercial, list_valorDolares, pais_origen,pais_destino,moneda
+    return  list_noParte,list_fracciones, list_descripciones, list_cantidadComercial, list_valorDolares, pais_origen,pais_destino,moneda,uuid
 
 
 # Load the XML file (replace 'example.xml' with the actual file path)
@@ -103,36 +107,36 @@ def parse_xml551(xml_file,checkbox_tra):
 #xml_file = 'C:/Users/medin/Downloads/F-0000005283.xml'
 
 
-def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,set_focus_on_entry,UMF,checkbox_tra):
+def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,set_focus_on_entry,UMF,checkbox_tra,checkbox_mar):
     try:
         xml_file = ruta
         # 501 ###########################################################################
-        operacion, clave, moneda = parse_xml501(xml_file)
+        operacion, clave, moneda, uuid= parse_xml501(xml_file)
         text_block501 = create_text_block501(
-            operacion, clave, no_pedimento,codigo_impo,no_factura, moneda) 
+            operacion, clave, no_pedimento,codigo_impo,no_factura, moneda, uuid, checkbox_mar) 
         # 505 ###########################################################################
         folio, fecha, incoterm, moneda, total_usd, uuid = parse_xml505(
             xml_file)
         text_block505 = create_text_block505(
             folio, fecha, incoterm, moneda, total_usd, codigo_proveedor, uuid)
         # 551 #######################################################################
-        noParte,fraccion, descripcion, cantidadComercial, valor_dolares,pais_origen,pais_destino,moneda= parse_xml551(
+        noParte,fraccion, descripcion, cantidadComercial, valor_dolares,pais_origen,pais_destino,moneda,uuid= parse_xml551(
             xml_file,checkbox_tra)
-        text_block551 = create_text_block551(noParte,fraccion, descripcion,cantidadComercial,UMF,valor_dolares,pais_origen,pais_destino,moneda,no_factura) 
+        text_block551 = create_text_block551(noParte,fraccion, descripcion,cantidadComercial,UMF,valor_dolares,pais_origen,pais_destino,moneda,no_factura,uuid,checkbox_mar) 
         success_first_try = True 
     except Exception as e:
         set_focus_on_entry()
         success_first_try = False
-        CTkMessagebox(title="Error al convertir", message="No se pudo convertir el archivo, puede que sea un archivo no admitido.", icon="cancel")
+        CTkMessagebox(title="Error al convertir", message="No se pudo convertir el archivo, puede que sea un archivo no admitido. O esta ingresando mas de un archivo", icon="cancel")
         
 
     if success_first_try:    
         ############### Guardar archivo #####################################
         # Ruta en la unidad de red
         try:
-            network_folder = r'H:\Vantec\DARWIN\Facturas\In'
-            #C:\Users\Orlando\Downloads
-            
+            network_folder = r'C:\Users\Orlando\Desktop\cfdiConvertidos'
+            #
+            #H:\Vantec\DARWIN\Facturas\In
             export_file_name = name_file + ".txt"
             export_txt_folder = os.path.join(network_folder, export_file_name)
 

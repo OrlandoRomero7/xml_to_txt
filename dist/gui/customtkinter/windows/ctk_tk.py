@@ -5,6 +5,7 @@ import os
 import platform
 import ctypes
 from typing import Union, Tuple, Optional
+from tkinterdnd2 import TkinterDnD
 
 from .widgets.theme import ThemeManager
 from .widgets.scaling import CTkScalingBaseClass
@@ -13,7 +14,7 @@ from .widgets.appearance_mode import CTkAppearanceModeBaseClass
 from customtkinter.windows.widgets.utility.utility_functions import pop_from_dict_by_set, check_kwargs_empty
 
 
-class CTk(tkinter.Tk, CTkAppearanceModeBaseClass, CTkScalingBaseClass):
+class CTk(TkinterDnD.Tk, CTkAppearanceModeBaseClass, CTkScalingBaseClass):
     """
     Main app window with dark titlebar on Windows and macOS.
     For detailed information check out the documentation.
@@ -35,7 +36,7 @@ class CTk(tkinter.Tk, CTkAppearanceModeBaseClass, CTkScalingBaseClass):
         self._enable_macos_dark_title_bar()
 
         # call init methods of super classes
-        tkinter.Tk.__init__(self, **pop_from_dict_by_set(kwargs, self._valid_tk_constructor_arguments))
+        TkinterDnD.Tk.__init__(self, **pop_from_dict_by_set(kwargs, self._valid_tk_constructor_arguments))
         CTkAppearanceModeBaseClass.__init__(self)
         CTkScalingBaseClass.__init__(self, scaling_type="window")
         check_kwargs_empty(kwargs, raise_error=True)
@@ -50,7 +51,7 @@ class CTk(tkinter.Tk, CTkAppearanceModeBaseClass, CTkScalingBaseClass):
 
         self._fg_color = ThemeManager.theme["CTk"]["fg_color"] if fg_color is None else self._check_color_type(fg_color)
 
-        # set bg of tkinter.Tk
+        # set bg of TkinterDnD.Tk
         super().configure(bg=self._apply_appearance_mode(self._fg_color))
 
         # set title
@@ -82,7 +83,7 @@ class CTk(tkinter.Tk, CTkAppearanceModeBaseClass, CTkScalingBaseClass):
         self._disable_macos_dark_title_bar()
 
         # call destroy methods of super classes
-        tkinter.Tk.destroy(self)
+        TkinterDnD.Tk.destroy(self)
         CTkAppearanceModeBaseClass.destroy(self)
         CTkScalingBaseClass.destroy(self)
 

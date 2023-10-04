@@ -1,6 +1,6 @@
 from tqdm import tqdm
 
-def create_text_block501(operacion, clave, no_pedimento,codigo_impo,no_factura, moneda):
+def create_text_block501(operacion, clave, no_pedimento,codigo_impo,no_factura, moneda, uuid, checkbox_mar):
     fields = [''] * 24
 
     fields[0] = "501"       #1 Tipo de Registro
@@ -8,12 +8,14 @@ def create_text_block501(operacion, clave, no_pedimento,codigo_impo,no_factura, 
     fields[2] = clave       #3 Clave de Pedimento
     fields[3] = no_pedimento       #4 Numero de Pedimento
     fields[4] = codigo_impo
+    if(checkbox_mar == "on"):
+        no_factura=uuid
     fields[16] = no_factura  #17 Referencia
     fields[19] = moneda      #20 Pais Moneda ?
 
     return f"{'|'.join(fields)}||"
 
-def create_text_block551(noParte, fraccion, descripcion, cantidadComercial, UMF,valor_dolares, pais_origen, pais_destino, moneda, no_factura):
+def create_text_block551(noParte, fraccion, descripcion, cantidadComercial, UMF,valor_dolares, pais_origen, pais_destino, moneda, no_factura,uuid,checkbox_mar):
     fields = [''] * 46
     result = []  # Aquí almacenaremos los resultados de todas las iteraciones
 
@@ -30,6 +32,8 @@ def create_text_block551(noParte, fraccion, descripcion, cantidadComercial, UMF,
         fields[14] = pais_destino
         fields[23] = moneda
         fields[37] = val_dol
+        if(checkbox_mar == "on"):
+            no_factura=uuid
         fields[43] = no_factura
 
         result.append('|'.join(fields) + '||\n')  # Agregar el resultado de la iteración con salto de línea
