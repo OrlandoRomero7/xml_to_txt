@@ -134,8 +134,8 @@ def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,s
         ############### Guardar archivo #####################################
         # Ruta en la unidad de red
         try:
-            network_folder = r'C:\Users\Orlando\Desktop\cfdiConvertidos'
-            #network_folder = r'H:\Vantec\DARWIN\Facturas\In'
+            #network_folder = r'C:\Users\Orlando\Desktop\cfdiConvertidos'
+            network_folder = r'H:\Vantec\DARWIN\Facturas\In'
             #H:\Vantec\DARWIN\Facturas\In
             export_file_name = name_file + ".txt"
             export_txt_folder = os.path.join(network_folder, export_file_name)
