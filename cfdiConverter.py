@@ -135,13 +135,13 @@ def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,s
         # Ruta en la unidad de red
         try:
             network_folder = r'C:\Users\Orlando\Desktop\cfdiConvertidos'
-            #
+            #network_folder = r'H:\Vantec\DARWIN\Facturas\In'
             #H:\Vantec\DARWIN\Facturas\In
             export_file_name = name_file + ".txt"
             export_txt_folder = os.path.join(network_folder, export_file_name)
 
             with open(export_txt_folder, 'w') as file:
-                # print(text_block501 + '\n' + text_block505 + '\n' + text_block551)
+                
                 file.write(text_block501 + '\n' + text_block505 + '\n' + text_block551)
             set_focus_on_entry()
             CTkMessagebox(message="Se convirtio correctamente el archivo.",icon="check", option_1="Okay")

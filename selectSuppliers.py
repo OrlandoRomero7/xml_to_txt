@@ -1,11 +1,11 @@
 from tkinter import ttk
 import tkinter as tk
 import customtkinter as ctk
-from query import obtenerClientes
+from query import obtenerProveedores
 
 ventana_secundaria = None  # referencia global para la ventana secundaria
  
-def mostrar_clientes(app, codigo_impo, codigo_proveedor):
+def mostrar_proveedores(app, codigo_impo, entry_UMF):
     global ventana_secundaria
     
     if ventana_secundaria and ventana_secundaria.winfo_exists():
@@ -19,7 +19,7 @@ def mostrar_clientes(app, codigo_impo, codigo_proveedor):
         codigo_impo.delete(0, ctk.END)
         codigo_impo.insert(0, valores[0])
         ventana_secundaria.destroy()
-        codigo_proveedor.focus_set()
+        entry_UMF.focus_set()
         return "break"  # Para evitar el comportamiento predeterminado de Tab
     
     def actualizar_treeview(event):
@@ -36,7 +36,7 @@ def mostrar_clientes(app, codigo_impo, codigo_proveedor):
                 treeview.insert("", "end", values=(codigo, nombre))
 
     ventana_secundaria = ctk.CTkToplevel(app)
-    ventana_secundaria.title("Clientes")
+    ventana_secundaria.title("Proveedores")
     ventana_secundaria.geometry("600x300")
     ventana_secundaria.after(250,lambda:ventana_secundaria.iconbitmap('icon.ico'))
     ventana_secundaria.resizable(False,False)
@@ -73,4 +73,4 @@ def mostrar_clientes(app, codigo_impo, codigo_proveedor):
     #Reactivar la actualización de la GUI
     ventana_secundaria.update()
 
-resultados = obtenerClientes()
+resultados = obtenerProveedores()

@@ -3,10 +3,10 @@ from tkinter import filedialog
 from cfdiConverter import create
 import os
 from PIL import Image
-from tkinterdnd2 import DND_FILES, TkinterDnD
+from tkinterdnd2 import DND_FILES
 from CTkMessagebox import CTkMessagebox
-from selectClient import mostrar_ventana_secundaria
-
+from selectClient import mostrar_clientes
+from selectSuppliers import mostrar_proveedores
 
 # Ruta del archivo de bloqueo
 lock_file_path = "my_app.lock"
@@ -35,7 +35,7 @@ if not check_lock():
     ctk.set_default_color_theme("green")
 
     app = ctk.CTk()  # create CTk window like you do with the Tk window
-    app.geometry("405x420")
+    app.geometry("425x420")
     app.iconbitmap('icon.ico')
     app.resizable(False,False)
     app.title("Convertidor CFDI a TXT DARWIN")
@@ -71,18 +71,21 @@ if not check_lock():
 
             if archivo != "" :
                 #if(checkbox_mar.get()=="on")
-
-                create(archivo, nombre, no_pedimento.get(), no_factura.get().upper(),codigo_impo.get().upper(),codigo_proveedor.get().upper(),set_focus_on_entry,entry_UMF.get().upper(),checkbox_tra.get(),checkbox_mar.get())
-                clear_entry()
+                try:
+                    create(archivo, nombre, no_pedimento.get(), no_factura.get().upper(),codigo_impo.get().upper(),codigo_proveedor.get().upper(),set_focus_on_entry,entry_UMF.get().upper(),checkbox_tra.get(),checkbox_mar.get())
+                    clear_entry()
+                except Exception as e:
+                    None
 
     def clear_entry():
         no_pedimento.delete(0, 'end')  
         codigo_impo.delete(0, 'end')  
-        no_factura.delete(0, 'end') 
         codigo_proveedor.delete(0, 'end') 
         entry_UMF.delete(0, 'end') 
         checkbox_tra.deselect()
         checkbox_mar.deselect()
+        no_factura.configure(state='normal')
+        no_factura.delete(0, 'end') 
         #check_var.set("false")
         
 
@@ -136,6 +139,8 @@ if not check_lock():
         else:
             return False """
     
+    
+    
     #################################################################################
 
     ######## INPUTS #######
@@ -154,11 +159,11 @@ if not check_lock():
     #Maritimo
     mar_CTkLabel = ctk.CTkLabel(
         app, text="Maritimo", text_color="#595959")
-    mar_CTkLabel.place(x=190, y=90)
+    mar_CTkLabel.place(x=260, y=230)
     check_var = ctk.StringVar(value="off")
     checkbox_mar = ctk.CTkCheckBox(master=app, fg_color="black", corner_radius=7,text="", variable=check_var,
                                     onvalue="on", offvalue="off",command=checkbox_event_mar)
-    checkbox_mar.place(x=220, y=120)
+    checkbox_mar.place(x=270, y=260)
 
     #Numero de factura
     no_factura_CTkLabel = ctk.CTkLabel(
@@ -172,6 +177,9 @@ if not check_lock():
                         validatecommand=(app.register(validate_numero_factura), '%P'))
     
     #Codigo del Importador
+    def activate_button_provee(event):
+        mostrar_clientes(app,codigo_impo,codigo_proveedor)
+
     codigo_impo_CTkLabel = ctk.CTkLabel(
         app, text="Código Cliente:", text_color="#595959")
     codigo_impo_CTkLabel.place(x=20, y=160)
@@ -181,34 +189,28 @@ if not check_lock():
     codigo_impo.place(x=20, y=190)
     codigo_impo.configure(validate="key",
                         validatecommand=(app.register(validate_codigo_impANDprovee), '%P'))
-    button_cli = ctk.CTkButton(app, text="+",width=25,height=25,command=lambda: mostrar_ventana_secundaria(app,codigo_impo))
+    codigo_impo.bind("<Tab>", activate_button_provee)
+    button_cli = ctk.CTkButton(app, text="+",width=25,height=25,command=lambda: mostrar_clientes(app,codigo_impo,codigo_proveedor))
     button_cli.place(x=150, y=190)
+    
+
+    def activate_button_clients(event):
+        mostrar_proveedores(app,codigo_proveedor,entry_UMF)
 
     #Codigo del proveedor
     codigo_proveedor_CTkLabel = ctk.CTkLabel(
         app, text="Código Proveedor:", text_color="#595959")
     codigo_proveedor_CTkLabel.place(x=260, y=160)
-
+    
     codigo_proveedor = ctk.CTkEntry(
         app, fg_color="white", corner_radius=7,  width=125)
     codigo_proveedor.place(x=260, y=190)
     codigo_proveedor.configure(validate="key",
                         validatecommand=(app.register(validate_codigo_impANDprovee), '%P'))
+    codigo_proveedor.bind("<Tab>", activate_button_clients)
+    button_provee = ctk.CTkButton(app, text="+",width=25,height=25,command=lambda: mostrar_proveedores(app,codigo_proveedor,entry_UMF))
+    button_provee.place(x=390, y=190)
     
-    """ all_options = [
-    "LTR", "LF", "NPR", "MIL", "NRL", "MTK", "GLL", "DZN", "DR", "BJ",
-    "EA", "BL", "PK_1", "CS", "SA", "YRD", "LBR", "LTI", "BO", "SET",
-    "C62_1", "FTK", "BX", "BE", "KGM", "TON"
-    ] """
-    """ #Cantidad Tarifa
-    cant_tarifa_CTkLabel = ctk.CTkLabel(
-        app, text="Cantidad Tarifa:", text_color="#595959")
-    cant_tarifa_CTkLabel.place(x=20, y=230)
-
-    cant_tarifa = ctk.CTkEntry(app, fg_color="white", corner_radius=7,  width=125)
-    cant_tarifa.place(x=20, y=260)
-    cant_tarifa.configure(validate="key",
-                        validatecommand=(app.register(validate_cant_tarifa), '%P')) """
     
     #UMF
     UMF_CTkLabel = ctk.CTkLabel(
