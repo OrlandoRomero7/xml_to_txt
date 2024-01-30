@@ -6,7 +6,7 @@ def obtenerClientes():
     database = 'Darwin_DB'
     username = 'sa'
     password = 'Darwin2020'
-    driver = '{ODBC Driver 17 for SQL Server}'  # Asegúrate de que esta versión del driver esté instalada en tu máquina.
+    driver = '{SQL Server}'  # Asegúrate de que esta versión del driver esté instalada en tu máquina.
 
     # Crear conexión
     connection_string = f"DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}"
@@ -29,7 +29,7 @@ def obtenerProveedores():
     database = 'Darwin_DB'
     username = 'sa'
     password = 'Darwin2020'
-    driver = '{ODBC Driver 17 for SQL Server}'  # Asegúrate de que esta versión del driver esté instalada en tu máquina.
+    driver = '{SQL Server}'  # Asegúrate de que esta versión del driver esté instalada en tu máquina.
 
     # Crear conexión
     connection_string = f"DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}"

@@ -7,6 +7,7 @@ from tkinterdnd2 import DND_FILES
 from CTkMessagebox import CTkMessagebox
 from selectClient import mostrar_clientes
 from selectSuppliers import mostrar_proveedores
+import pickle
 
 # Ruta del archivo de bloqueo
 lock_file_path = "my_app.lock"
@@ -56,12 +57,12 @@ if not check_lock():
         no_pedimento.focus()
 
     def abrir_explorador(filepath,abrir):
-        if (no_factura.get() != "" or checkbox_mar.get()=="on") and (no_pedimento.get() != "" and codigo_impo.get() != "" and codigo_proveedor.get()!="" and entry_UMF.get()!=""):
+        if (no_factura.get() != "" or switch_var.get()=="on") and (no_pedimento.get() != "" and codigo_impo.get() != "" and codigo_proveedor.get()!="" and entry_UMF.get()!=""):
             
             if abrir=="yes":
                 opciones = {
                 "title": "Selecciona un archivo XML",
-                "filetypes": (("Archivos XML", "*.xml"),)
+                "filetypes": (("Archivos XML", "*.xml"),),
                 }
                 archivo = filedialog.askopenfilename(**opciones)
                 nombre, extension = os.path.splitext(os.path.basename(archivo))
@@ -72,7 +73,7 @@ if not check_lock():
             if archivo != "" :
                 #if(checkbox_mar.get()=="on")
                 try:
-                    create(archivo, nombre, no_pedimento.get(), no_factura.get().upper(),codigo_impo.get().upper(),codigo_proveedor.get().upper(),set_focus_on_entry,entry_UMF.get().upper(),checkbox_tra.get(),checkbox_mar.get())
+                    create(archivo, nombre, no_pedimento.get(), no_factura.get().upper(),codigo_impo.get().upper(),codigo_proveedor.get().upper(),set_focus_on_entry,entry_UMF.get().upper(),checkbox_tra.get(),switch_var.get())
                     clear_entry()
                 except Exception as e:
                     None
@@ -83,8 +84,8 @@ if not check_lock():
         codigo_proveedor.delete(0, 'end') 
         entry_UMF.delete(0, 'end') 
         checkbox_tra.deselect()
-        checkbox_mar.deselect()
-        no_factura.configure(state='normal')
+        #checkbox_mar.deselect()
+        #no_factura.configure(state='normal')
         no_factura.delete(0, 'end') 
         #check_var.set("false")
         
@@ -123,11 +124,25 @@ if not check_lock():
         else:
             return False
         
-    def checkbox_event_mar():
-        if check_var.get() == "on":
-            no_factura.configure(state='disabled')
+    # def checkbox_event_mar():
+    #     if check_var.get() == "on":
+    #         no_factura.delete(0, 'end') 
+    #         no_factura.configure(state='disabled')
+            
+    #     else:
+    #         no_factura.configure(state='normal')
+
+    def switch_event():
+        if(switch_var.get()=="on"):
+            switch.configure(text="Si")
+            no_factura.delete(0, 'end') 
+            #no_factura.configure(state='disabled')
         else:
-            no_factura.configure(state='normal')
+            switch.configure(text="No")
+            #no_factura.configure(state='normal')
+        # Guardar el estado en un archivo pickle
+        with open("switch_state.pkl", "wb") as file:
+            pickle.dump(switch_var.get(), file)
 
 
     
@@ -142,8 +157,30 @@ if not check_lock():
     
     
     #################################################################################
+    
+    ############################# SWITCH ########################################
+    switch_CTkLabel = ctk.CTkLabel(
+        app, text="Maritimo", text_color="#595959")
+    switch_CTkLabel.place(x=20, y=40)
+    switch_var = ctk.StringVar(value="on")
+    switch = ctk.CTkSwitch(master=app,text="Si",variable=switch_var, command=switch_event,onvalue="on", offvalue="off")
+    switch.place(x=20, y=65)
 
-    ######## INPUTS #######
+    # Intentar cargar el estado anterior desde el archivo pickle
+    try:
+        with open("switch_state.pkl", "rb") as file:
+            saved_state = pickle.load(file)
+            switch_var.set(saved_state)
+            if(switch_var.get()=="on"):
+                switch.configure(text="Si")
+            else:
+                switch.configure(text="No")
+    except FileNotFoundError:
+        pass  # El archivo aún no existe
+    
+    
+
+    ################# INPUTS #######################
 
     #Numero de pedimento
     no_pedimento_CTkLabel = ctk.CTkLabel(
@@ -157,13 +194,13 @@ if not check_lock():
                         validatecommand=(app.register(validate_pedimento), '%P'))
     
     #Maritimo
-    mar_CTkLabel = ctk.CTkLabel(
-        app, text="Maritimo", text_color="#595959")
-    mar_CTkLabel.place(x=260, y=230)
-    check_var = ctk.StringVar(value="off")
-    checkbox_mar = ctk.CTkCheckBox(master=app, fg_color="black", corner_radius=7,text="", variable=check_var,
-                                    onvalue="on", offvalue="off",command=checkbox_event_mar)
-    checkbox_mar.place(x=270, y=260)
+    # mar_CTkLabel = ctk.CTkLabel(
+    #     app, text="Maritimo", text_color="#595959")
+    # mar_CTkLabel.place(x=260, y=230)
+    # check_var = ctk.StringVar(value="off")
+    # checkbox_mar = ctk.CTkCheckBox(master=app, fg_color="black", corner_radius=7,text="", variable=check_var,
+    #                                 onvalue="on", offvalue="off",command=checkbox_event_mar)
+    # checkbox_mar.place(x=270, y=260)
 
     #Numero de factura
     no_factura_CTkLabel = ctk.CTkLabel(
@@ -175,7 +212,9 @@ if not check_lock():
     no_factura.place(x=260, y=120)
     no_factura.configure(validate="key",
                         validatecommand=(app.register(validate_numero_factura), '%P'))
-    
+    # if(switch_var.get()=="on"):
+    #     no_factura.configure(state='disabled')
+
     #Codigo del Importador
     def activate_button_provee(event):
         mostrar_clientes(app,codigo_impo,codigo_proveedor)

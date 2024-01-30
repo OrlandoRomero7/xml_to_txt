@@ -107,22 +107,22 @@ def parse_xml551(xml_file,checkbox_tra):
 #xml_file = 'C:/Users/medin/Downloads/F-0000005283.xml'
 
 
-def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,set_focus_on_entry,UMF,checkbox_tra,checkbox_mar):
+def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,set_focus_on_entry,UMF,checkbox_tra,switch_var):
     try:
         xml_file = ruta
         # 501 ###########################################################################
         operacion, clave, moneda, uuid= parse_xml501(xml_file)
         text_block501 = create_text_block501(
-            operacion, clave, no_pedimento,codigo_impo,no_factura, moneda, uuid, checkbox_mar) 
+            operacion, clave, no_pedimento,codigo_impo,no_factura, moneda, uuid, switch_var) 
         # 505 ###########################################################################
         folio, fecha, incoterm, moneda, total_usd, uuid = parse_xml505(
             xml_file)
         text_block505 = create_text_block505(
-            folio, fecha, incoterm, moneda, total_usd, codigo_proveedor, uuid)
+            folio, fecha, incoterm, moneda, total_usd, codigo_proveedor, uuid,switch_var)
         # 551 #######################################################################
         noParte,fraccion, descripcion, cantidadComercial, valor_dolares,pais_origen,pais_destino,moneda,uuid= parse_xml551(
             xml_file,checkbox_tra)
-        text_block551 = create_text_block551(noParte,fraccion, descripcion,cantidadComercial,UMF,valor_dolares,pais_origen,pais_destino,moneda,no_factura,uuid,checkbox_mar) 
+        text_block551 = create_text_block551(noParte,fraccion, descripcion,cantidadComercial,UMF,valor_dolares,pais_origen,pais_destino,moneda,no_factura,uuid,switch_var) 
         success_first_try = True 
     except Exception as e:
         set_focus_on_entry()
@@ -134,8 +134,8 @@ def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,s
         ############### Guardar archivo #####################################
         # Ruta en la unidad de red
         try:
-            #network_folder = r'C:\Users\Orlando\Desktop\cfdiConvertidos'
-            network_folder = r'H:\Vantec\DARWIN\Facturas\In'
+            network_folder = r'C:\Users\Orlando\Desktop\cfdiConvertidos'
+            #network_folder = r'H:\Vantec\DARWIN\Facturas\In'
             #H:\Vantec\DARWIN\Facturas\In
             export_file_name = name_file + ".txt"
             export_txt_folder = os.path.join(network_folder, export_file_name)
