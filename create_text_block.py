@@ -40,7 +40,7 @@ def create_text_block551(noParte, fraccion, descripcion, cantidadComercial, UMF,
 
     return ''.join(result)  # Unir todos los resultados en una sola cadena y retornarla
 
-def create_text_block505(folio, fecha, incoterm, moneda, total_usd, codigo_proveedor,uuid,switch_var):
+def create_text_block505(folio, fecha, incoterm, moneda, total_usd, codigo_proveedor,uuid,switch_var,no_factura):
     formatted_fecha = fecha.replace('-', '')
     fields = [''] * 52
     fields[0] = "505"
@@ -57,7 +57,16 @@ def create_text_block505(folio, fecha, incoterm, moneda, total_usd, codigo_prove
     #fields[16] = ' '  # Observaciones a nivel factura
     #fields[17:24] = ['0'] * 7
     fields[31] = fecha # ?????
+    # if(switch_var=="on"):
+    #     fields[34] = no_factura
     fields[40] = uuid 
 
+    return f"{'|'.join(fields)}||"
+
+def create_text_block511(switch_var,no_factura):
+    fields = [''] * 2
+    fields[0] = "511"
+    if(switch_var == "on"):
+        fields[1] = no_factura
     return f"{'|'.join(fields)}||"
 

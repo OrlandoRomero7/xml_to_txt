@@ -63,21 +63,32 @@ if not check_lock():
                 opciones = {
                 "title": "Selecciona un archivo XML",
                 "filetypes": (("Archivos XML", "*.xml"),),
+                "multiple": True
                 }
-                archivo = filedialog.askopenfilename(**opciones)
-                nombre, extension = os.path.splitext(os.path.basename(archivo))
+                archivos = filedialog.askopenfilenames(**opciones)
+                print(archivos)
+                print(len(archivos))
+                # archivo = filedialog.askopenfilename(**opciones)
+                # nombre, extension = os.path.splitext(os.path.basename(archivo))
             elif abrir=="no":
-                archivo = filepath
-                nombre, extension = os.path.splitext(os.path.basename(archivo))
+                archivos = filepath
+                #print(len(archivos))
+                #nombre, extension = os.path.splitext(os.path.basename(archivo))
 
-            if archivo != "" :
-                #if(checkbox_mar.get()=="on")
+            if len(archivos) > 0 :
                 try:
-                    create(archivo, nombre, no_pedimento.get(), no_factura.get().upper(),codigo_impo.get().upper(),codigo_proveedor.get().upper(),set_focus_on_entry,entry_UMF.get().upper(),checkbox_tra.get(),switch_var.get())
-                    clear_entry()
+                    for archivo in archivos:
+                        nombre, extension = os.path.splitext(os.path.basename(archivo))
+                        # Procesa cada archivo como desees
+                    
+                        create(archivo, nombre, no_pedimento.get(), no_factura.get().upper(), codigo_impo.get().upper(), codigo_proveedor.get().upper(), set_focus_on_entry, entry_UMF.get().upper(), checkbox_tra.get(), switch_var.get())
+                        clear_entry()
+                    CTkMessagebox(message=f"Se convirtio correctamente {len(archivos)} archivo(s).",icon="check", option_1="Okay")
                 except Exception as e:
+                    CTkMessagebox(title="Error al guardar", message="No se pudo guardar el/los archivo(s)", icon="cancel")
                     None
-
+            
+                    
     def clear_entry():
         no_pedimento.delete(0, 'end')  
         codigo_impo.delete(0, 'end')  
@@ -135,7 +146,7 @@ if not check_lock():
     def switch_event():
         if(switch_var.get()=="on"):
             switch.configure(text="Si")
-            no_factura.delete(0, 'end') 
+            #no_factura.delete(0, 'end') 
             #no_factura.configure(state='disabled')
         else:
             switch.configure(text="No")
@@ -264,27 +275,29 @@ if not check_lock():
     #Checkbox Traducir Descipcion
     tra_CTkLabel = ctk.CTkLabel(
         app, text="Traducir\nDescripción", text_color="#595959")
-    tra_CTkLabel.place(x=320, y=230)
+    tra_CTkLabel.place(x=260, y=230)
     checkbox_tra = ctk.CTkCheckBox(master=app, fg_color="black", corner_radius=7,text="", 
                                     onvalue="on", offvalue="off")
-    checkbox_tra.place(x=340, y=260)
+    checkbox_tra.place(x=280, y=260)
     
     #################################################################################
-
     def handle_drop(event):
         global abrir,filepath
         abrir="no"
-        filepath = event.data.replace("{", "").replace("}", "")
+        filepath = eval(event.data.replace("} {", "', '").replace("{", "('").replace("}", "',)"))
 
+        extension_valida = True
         # Check if the dropped file has the desired extension (e.g., '.txt')
         desired_extension = '.xml'  # Change this to the desired extension
-        if filepath.lower().endswith(desired_extension):
+        for file in filepath:
+            if not file.lower().endswith(desired_extension):
+                extension_valida = False            
+        if extension_valida:
             abrir_explorador(filepath,abrir)
         else:
-            CTkMessagebox(title="Formato no admitido", message="Archivo incorrecto. Debe ser de tipo {}".format(desired_extension), icon="cancel")
-            
+            CTkMessagebox(title="Formato no admitido", message="Archivo incorrecto. Debe ser de tipo xml".format(desired_extension), icon="cancel")
         abrir="yes"
-        
+
     # Use CTkButton instead of tkinter Button
     button = ctk.CTkButton(master=app, text="Cargar CFDI",
                         command=lambda: abrir_explorador(filepath,abrir))

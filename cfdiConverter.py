@@ -118,11 +118,15 @@ def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,s
         folio, fecha, incoterm, moneda, total_usd, uuid = parse_xml505(
             xml_file)
         text_block505 = create_text_block505(
-            folio, fecha, incoterm, moneda, total_usd, codigo_proveedor, uuid,switch_var)
+            folio, fecha, incoterm, moneda, total_usd, codigo_proveedor, uuid,switch_var,no_factura)
+        # 511 #######################################################################
+        text_block511 = create_text_block511(
+            switch_var,no_factura)
         # 551 #######################################################################
         noParte,fraccion, descripcion, cantidadComercial, valor_dolares,pais_origen,pais_destino,moneda,uuid= parse_xml551(
             xml_file,checkbox_tra)
         text_block551 = create_text_block551(noParte,fraccion, descripcion,cantidadComercial,UMF,valor_dolares,pais_origen,pais_destino,moneda,no_factura,uuid,switch_var) 
+
         success_first_try = True 
     except Exception as e:
         set_focus_on_entry()
@@ -141,14 +145,17 @@ def create(ruta,name_file,no_pedimento,no_factura,codigo_impo,codigo_proveedor,s
             export_txt_folder = os.path.join(network_folder, export_file_name)
 
             with open(export_txt_folder, 'w') as file:
-                
-                file.write(text_block501 + '\n' + text_block505 + '\n' + text_block551)
+                if(switch_var=="off"):
+                    file.write(text_block501 + '\n' + text_block505 + '\n' + text_block551)
+                else:
+                    file.write(text_block501 + '\n' + text_block505 + '\n' + text_block511 +'\n' + text_block551)
             set_focus_on_entry()
-            CTkMessagebox(message="Se convirtio correctamente el archivo.",icon="check", option_1="Okay")
+            #CTkMessagebox(message="Se convirtio correctamente el archivo.",icon="check", option_1="Okay")
             
         
         except Exception as e:
-            CTkMessagebox(title="Error al guardar", message="No se pudo guardar el archivo", icon="cancel")
+            None
+            #CTkMessagebox(title="Error al guardar", message="No se pudo guardar el archivo", icon="cancel")
         
     
 
